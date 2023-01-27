@@ -1,4 +1,5 @@
 import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
 /* import logo from './logo.svg';
 
 export default function App(){
@@ -18,9 +19,9 @@ function App() {
 
   //render
   return (
-    <div class="test">
-      <h1>Hello there</h1>
-    </div>
+    <main>
+      <NavBar />
+    </main>
   );
 }
 
