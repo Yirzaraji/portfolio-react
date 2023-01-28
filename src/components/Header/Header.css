@@ -1,0 +1,86 @@
+.blockBanner01 {
+  background: #4123bf;
+  background: -moz-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, #4123bf),
+    color-stop(12%, #4320b6),
+    color-stop(96%, #500b76)
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #4123bf 0%,
+    #4320b6 12%,
+    #500b76 96%
+  );
+  background: -o-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -ms-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: linear-gradient(to right, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#4123bf", endColorstr="#500b76", GradientType=1 );
+  font-weight: bold;
+  color: white;
+}
+
+.blockBanner01 p:nth-child(2),
+p:nth-child(3) {
+  font-size: 2.3rem;
+  line-height: 20px;
+}
+
+.blockBanner01 p:nth-child(4) span:nth-child(1) {
+  margin-top: 50px;
+  font-size: 1.4rem;
+  background-color: white;
+  color: #4a028d;
+  border-radius: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.blockBanner01 p:nth-child(4) span:nth-child(3) {
+  font-size: 1.4rem;
+  background-color: white;
+  color: #4a028d;
+  border-radius: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.bannerLowpolyImg {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.bandeauContact {
+  position: absolute;
+  bottom: 0;
+}
+
+.bandeauContact img {
+  width: 7%;
+  margin-bottom: 2%;
+}
+
+.cv_icon i {
+  color: white;
+  font-size: 2.4rem;
+  transition: 0.4s;
+  line-height: 30%;
+}
+
+.cv_icon i:hover {
+  color: #61d5e8;
+  transition: 0.4s;
+}
+
+.cv_icon p {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5rem !important;
+  font-weight: 600;
+  transition: 0.4s;
+}

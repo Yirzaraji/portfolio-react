@@ -1,5 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
+import Header from "./components/Header/Header";
 /* import logo from './logo.svg';
 
 export default function App(){
@@ -21,6 +22,7 @@ function App() {
   return (
     <main>
       <NavBar />
+      <Header />
     </main>
   );
 }
