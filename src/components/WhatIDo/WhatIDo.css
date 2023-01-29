@@ -1,0 +1,35 @@
+.blockiDO {
+  background-color: white;
+}
+
+.btnrounded {
+  border-radius: 30%;
+  font-weight: 900;
+}
+
+h1 {
+  color: purple;
+}
+
+.titleColor {
+  background: -webkit-linear-gradient(#4f9ed6, #642088);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tripleCard {
+  background: -webkit-linear-gradient(#4f9ed6, #642088);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  min-height: 300px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+.tripleCard span {
+  font-size: 1.5rem;
+}
+
+.tripleCard img {
+  width: 70px;
+}
