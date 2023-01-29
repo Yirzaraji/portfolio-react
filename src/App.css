@@ -7,6 +7,18 @@
   pointer-events: none;
 }
 
+/* Light theme styles */
+.light-theme {
+  background-color: white;
+  color: black;
+}
+
+/* Dark theme styles */
+.dark-theme {
+  background-color: rgb(20, 19, 37);
+  color: white;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

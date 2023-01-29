@@ -1,6 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header/Header";
+import ThemeSwitcher from "./components/Button/ThemeSwitcher";
 /* import logo from './logo.svg';
 
 export default function App(){
@@ -23,8 +24,8 @@ function App() {
     <main>
       <NavBar />
       <Header />
+      <ThemeSwitcher />
     </main>
   );
 }
-
 export default App;
