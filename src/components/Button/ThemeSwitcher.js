@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import About from "../About/About";
 
 function ThemeSwitcher() {
   //Use state hook to set the theme with an initial value from local storage or 'light'

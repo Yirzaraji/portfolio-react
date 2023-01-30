@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+
 const About = ({ theme }) => (
   <div className="container-fluid">
     <div className="row">
@@ -15,7 +16,7 @@ const About = ({ theme }) => (
           <div
             className="col-md-5 line_left ml-2 pt-4 about-title"
             id="ankor_aboutMe"
-            htmlStyle="text-justify: auto;"
+            style={{ textAlign: "justify" }}
           >
             <b>ABOUT ME...</b>
             <br />

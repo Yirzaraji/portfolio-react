@@ -1,0 +1,92 @@
+.iconSkills {
+  color: #5c4ea4;
+}
+
+.iconSkills i {
+  font-size: 3.4rem;
+  margin-right: 2%;
+}
+
+.iconSkills p {
+  font-size: 1rem;
+  color: #5c4ea4;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 900;
+  margin-top: 5%;
+}
+
+.isotopButton {
+  color: #5c4ea4;
+  background-color: #5c4ea400;
+  font-weight: bold;
+  border: 3px solid #5c4ea4;
+  border-radius: 29px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.isotopButton:hover {
+  transition: 0.4s;
+  text-decoration: none;
+  background-color: #5c4ea4;
+  color: white;
+}
+
+.blocExp {
+  color: white;
+  min-height: 650px;
+  background: #4123bf;
+  background: -moz-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, #4123bf),
+    color-stop(12%, #4320b6),
+    color-stop(96%, #500b76)
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #4123bf 0%,
+    #4320b6 12%,
+    #500b76 96%
+  );
+  background: -o-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -ms-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: linear-gradient(to right, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#4123bf", endColorstr="#500b76", GradientType=1 );
+}
+
+.line_left {
+  border-left: 4px dotted white;
+}
+
+.line_leftBlack {
+  border-left: 4px dotted black;
+}
+
+.line_left p:nth-child(3) {
+  font-size: 1rem;
+}
+
+.line_leftBlack p:nth-child(3) {
+  font-size: 1rem;
+}
+
+.redfont {
+  color: #ff0024;
+}
+
+.blocDip {
+  min-height: 650px;
+  background-color: white;
+}
+
+.gradientPurpleFont {
+  background: -webkit-linear-gradient(90deg, #4f9ed6, #642088);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 23px;
+}

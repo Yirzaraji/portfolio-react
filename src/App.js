@@ -4,6 +4,13 @@ import Header from "./components/Header/Header";
 import ThemeSwitcher from "./components/Button/ThemeSwitcher";
 import WhatIDo from "./components/WhatIDo/WhatIDo";
 import About from "./components/About/About";
+import ThemeContext from "./store/ThemeContext";
+import React, { useState } from "react";
+import Cards from "./components/Cards/Card";
+import Curriculum from "./components/Curriculum/Curriculum";
+import Skills from "./components/Skills/Skills";
+import Footer from "./components/Footer/Footer";
+import Contact from "./components/Contact/Contact";
 /* import logo from './logo.svg';
 
 export default function App(){
@@ -18,18 +25,30 @@ export default function App(){
 
 function App() {
   //state
+  const [theme, setTheme] = useState("light");
 
   //logic
+  const contextValue = {
+    theme: theme,
+    updateTheme: setTheme,
+  };
 
   //render
   return (
-    <main>
-      <NavBar />
-      <Header />
-      <ThemeSwitcher />
-      <WhatIDo />
-      <About />
-    </main>
+    <ThemeContext.Provider value={contextValue}>
+      <main>
+        <ThemeSwitcher />
+        <NavBar />
+        <Header />
+        <WhatIDo />
+        <About />
+        <Cards />
+        <Curriculum />
+        <Skills />
+        <Contact />
+        <Footer />
+      </main>
+    </ThemeContext.Provider>
   );
 }
 export default App;

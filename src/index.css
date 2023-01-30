@@ -1,13 +1,124 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* ####### Mobile responsive ######### */
+@media only screen and (min-width: 2577px) {
+  .img-responsive-custom {
+    width: 200px;
+  }
+}
+@media only screen and (min-width: 2500px) {
+  .img-responsive-custom {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 2017px) {
+  .img-responsive-custom {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1196px) {
+  .gridCards {
+    left: 15%;
+  }
+}
+@media screen and (max-width: 990px) {
+  .gridCards {
+    left: 4%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gridCards {
+    left: 15%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .simpleNavBar {
+    display: none;
+  }
+
+  #mobile-burger {
+    display: block;
+    position: fixed;
+    z-index: 996;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .navbar-mobile li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.3rem;
+    line-height: 59px;
+    transition: 0.4s;
+  }
+
+  .navbar-mobile li a:hover {
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #6016b4;
+    border-radius: 15px;
+    transition: 0.4s;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .navbar-mobile {
+    background-color: #1e1e1e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 345px;
+    overflow: hidden;
+    color: #402bfd;
+    /* hide the menu above the screen by default */
+    transform: translateY(-100%);
+    /* transition adds a little animation when sliding in and out the menu */
+    transition: transform 0.2s ease;
+    z-index: 998;
+  }
+
+  .showNav {
+    /* show the menu */
+    transform: translateY(0);
+  }
+
+  .newsCard {
+    width: 309px;
+    height: 257px;
+  }
+
+  .list_js li a {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .gridCards {
+    left: 0%;
+  }
+
+  .newsCard {
+    width: 309px;
+    height: 257px;
+  }
+
+  .newsCaption-content {
+    display: none;
+  }
 }
