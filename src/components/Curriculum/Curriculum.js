@@ -30,13 +30,11 @@ const Curriculum = () => (
           l'application de l'entreprise essentiellement sur du debug et la
           resolution des tickets clients.
         </p>
-        <p>
-          <ul>
-            <li>PHP</li>
-            <li>Twig Doctrine</li>
-            <li>Javascript</li>
-          </ul>
-        </p>
+        <ul>
+          <li>PHP</li>
+          <li>Twig Doctrine</li>
+          <li>Javascript</li>
+        </ul>
         <div className="mt-5"></div>
         <p>
           <b>
@@ -53,15 +51,13 @@ const Curriculum = () => (
           maitriser ce nouvel environnement de travail et par la suite pu
           developper mes premiers composant d'acces aux données sur
           l'application de l'entreprise Digeat et Sacre Fernand.
-          <br />
         </p>
-        <p>
-          <ul>
-            <li>Javascript, Jquery, Ajax</li>
-            <li>Html, Css, Twig, Boostrap</li>
-            <li>Php, Sql, Uml, Doctrine, gitlab</li>
-          </ul>
-        </p>
+        <br />
+        <ul>
+          <li>Javascript, Jquery, Ajax</li>
+          <li>Html, Css, Twig, Boostrap</li>
+          <li>Php, Sql, Uml, Doctrine, gitlab</li>
+        </ul>
       </div>
     </div>
 
