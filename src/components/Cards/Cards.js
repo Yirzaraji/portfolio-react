@@ -101,16 +101,14 @@ const Cards = (props) => {
     },
   ];
 
-  console.log(props.value);
   return (
-    <div className="container-fluid">
-      <div id="tab1" className="box devBox active">
+    <div className="container-fluid mt-5">
+      <div className="box devBox active">
         <div className="row justify-content-center flex-wrap">
-          {/* for devPost in devPosts */}
           {fetchCards
             .filter((card) => card.category === props.value)
-            .map((card) => (
-              <a href={"/route"}>
+            .map((card, index) => (
+              <a key={index} href={"/route"}>
                 <div className="newsCard news-Slide-up m-1">
                   <img alt="" src={card.image} />
                   <div className="newsCaption">

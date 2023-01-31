@@ -29,6 +29,7 @@ const Tabs = () => {
           <ul className="navTabs list_js">
             {cardsTab.map((selectedTab, index) => (
               <li
+                key={index}
                 onClick={() => setSelectedCardsTab(index)}
                 id={selectedTab.id}
               >
