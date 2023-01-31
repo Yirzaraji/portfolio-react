@@ -6,11 +6,11 @@ import WhatIDo from "./components/WhatIDo/WhatIDo";
 import About from "./components/About/About";
 import ThemeContext from "./store/ThemeContext";
 import React, { useState } from "react";
-import Cards from "./components/Cards/Card";
 import Curriculum from "./components/Curriculum/Curriculum";
 import Skills from "./components/Skills/Skills";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
+import Tabs from "./components/Cards/Tabs";
 /* import logo from './logo.svg';
 
 export default function App(){
@@ -42,7 +42,7 @@ function App() {
         <Header />
         <WhatIDo />
         <About />
-        <Cards />
+        <Tabs />
         <Curriculum />
         <Skills />
         <Contact />

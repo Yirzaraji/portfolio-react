@@ -175,9 +175,6 @@
 
 .list_js li {
   display: inline;
-}
-
-.list_js li a {
   text-decoration: none;
   color: #5c4ea4;
   cursor: pointer;
@@ -191,29 +188,9 @@
   transition: 0.4s;
 }
 
-.list_js li a:hover {
+.list_js li:hover {
   transition: 0.4s;
   text-decoration: none;
   background-color: #5c4ea4;
   color: white;
-}
-
-.box.active {
-  display: block;
-  transition: 0.4s;
-}
-
-.box.hide {
-  display: none;
-  transition: 0.4s;
-}
-
-.boxTech.active {
-  display: block;
-  transition: 0.4s;
-}
-
-.boxTech.hide {
-  display: none;
-  transition: 0.4s;
 }
