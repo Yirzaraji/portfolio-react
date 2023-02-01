@@ -17,6 +17,16 @@ function NavBar() {
         <div className="navButton">
           <a href="#ankor_contact">CONTACT</a>
         </div>
+        <div className="navButton">
+          <Link to="/administration">
+            <i className="fas fa-users-cog"></i>
+          </Link>
+        </div>
+        <div className="navButton">
+          <Link to="/login">
+            <i className="fas fa-user-lock"></i>
+          </Link>
+        </div>
       </div>
     </nav>
   );

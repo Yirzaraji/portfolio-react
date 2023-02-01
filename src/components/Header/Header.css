@@ -20,6 +20,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#4123bf", endColorstr="#500b76", GradientType=1 );
   font-weight: bold;
   color: white;
+  height: 684px;
 }
 
 .blockBanner01 p:nth-child(2),
@@ -49,6 +50,10 @@ p:nth-child(3) {
   padding-right: 30px;
   font-weight: 500;
   letter-spacing: 3px;
+}
+
+.logoround {
+  width: 50%;
 }
 
 .bannerLowpolyImg {

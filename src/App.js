@@ -29,7 +29,7 @@ function App() {
       <Route path="/administration" element={<Administration />} />
       <Route
         path="/cv"
-        render={() => <PDFViewer url="/public/images/CV_Remi_Larrauri.pdf" />}
+        element={<PDFViewer url="images/CV_Remi_Larrauri.pdf" />}
       />
     </Routes>
     // </ThemeContext.Provider>
