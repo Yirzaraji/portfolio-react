@@ -111,7 +111,7 @@ const Cards = (props) => {
               <a key={index} href={"/route"}>
                 <div className="newsCard news-Slide-up m-1">
                   <img alt="" src={card.image} />
-                  <div className="newsCaption">
+                  <div className="newsCaption text-left">
                     <div className="newsCaption-title">project</div>
                     <span className="projectTitle">{card.title}</span>
                     <div className="dottedLine mb-3 mt-1"></div>
