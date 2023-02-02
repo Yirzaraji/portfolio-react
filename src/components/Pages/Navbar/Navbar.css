@@ -1,0 +1,78 @@
+.NavDesktop {
+  display: flex;
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  padding-right: 5%;
+  padding-top: 1%;
+}
+
+.navButton a {
+  text-decoration: none;
+  margin-left: 6%;
+  font-weight: bold;
+  color: white;
+  border-radius: 30px;
+  padding-left: 11px;
+  padding-right: 11px;
+  transition: 0.4s;
+}
+.navButton a:hover {
+  color: #263e84;
+  transition: 0.4s;
+  background-color: white;
+  transition: 0.4s;
+  cursor: pointer;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/*NAVBAR SIMPLE*/
+.NavDesktopSimple {
+  display: flex;
+  /* padding-right: 5%;
+  padding-top: 1%; */
+  height: 65px;
+}
+
+.navButtonSimple a {
+  margin-left: 6%;
+  font-weight: bold;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 0.4s;
+}
+.navButtonSimple a:hover {
+  background-color: white;
+  color: #161616;
+  transition: 0.4s;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 30px;
+}
+
+.simpleNavBar {
+  background: #4123bf;
+  background: -moz-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, #4123bf),
+    color-stop(12%, #4320b6),
+    color-stop(96%, #500b76)
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #4123bf 0%,
+    #4320b6 12%,
+    #500b76 96%
+  );
+  background: -o-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -ms-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: linear-gradient(to right, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#4123bf", endColorstr="#500b76", GradientType=1 );
+}

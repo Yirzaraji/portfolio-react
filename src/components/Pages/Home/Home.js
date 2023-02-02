@@ -1,5 +1,5 @@
 import Header from "./Header/Header";
-import NavBar from "./NavBar/NavBar";
+import Navbar from "../Navbar/Navbar";
 import WhatIDo from "./WhatIDo/WhatIDo";
 import About from "./About/About";
 import Curriculum from "./Curriculum/Curriculum";
@@ -10,7 +10,7 @@ import Tabs from "./Cards/Tabs";
 
 const Home = () => (
   <div className="main">
-    <NavBar />
+    <Navbar />
     <Header />
     <WhatIDo />
     <About />

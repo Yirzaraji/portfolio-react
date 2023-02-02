@@ -4,9 +4,11 @@ import Content from "./Content";
 import Description from "./Description";
 import TitleCarousel from "./TitleCarousel";
 import "./Post.css";
+import NavbarSimple from "../Navbar/NavbarSimple";
 
 const Show = () => (
   <div className="section">
+    <NavbarSimple />
     <Description />
     <Content />
     <TitleCarousel />

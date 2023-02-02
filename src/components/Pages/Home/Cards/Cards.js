@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 
 const Cards = (props) => {
@@ -100,7 +101,7 @@ const Cards = (props) => {
       data: "22/12/2023",
     },
   ];
-
+  console.log(props.value);
   return (
     <div className="container-fluid mt-5">
       <div className="box devBox active">
@@ -108,7 +109,7 @@ const Cards = (props) => {
           {fetchCards
             .filter((card) => card.category === props.value)
             .map((card, index) => (
-              <a key={index} href={"/route"}>
+              <Link key={index} to={`/post/${card.id}`}>
                 <div className="newsCard news-Slide-up m-1">
                   <img alt="" src={card.image} />
                   <div className="newsCaption text-left">
@@ -126,7 +127,7 @@ const Cards = (props) => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
         </div>
       </div>
