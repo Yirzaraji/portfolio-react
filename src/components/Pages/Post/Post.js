@@ -3,6 +3,7 @@ import Carousel from "./Carousel";
 import Content from "./Content";
 import Description from "./Description";
 import TitleCarousel from "./TitleCarousel";
+import "./Post.css";
 
 const Show = () => (
   <div className="section">

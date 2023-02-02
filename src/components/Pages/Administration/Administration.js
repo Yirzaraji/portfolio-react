@@ -138,7 +138,7 @@ const Administration = () => {
         <div className="col-md-10 text-center mb-5 mt-5">
           <Link
             className="titleColor 1.4rem"
-            to="post_create"
+            to="post/create"
             style={{ position: "absolute", left: "22px", top: "-36px" }}
           >
             <i className="far fa-edit"></i>

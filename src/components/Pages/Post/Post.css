@@ -1,0 +1,141 @@
+.bg-white img {
+  margin: 0;
+  padding: 0;
+}
+
+.project-title {
+  margin-top: 9px;
+  line-height: 15px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.project {
+  color: #f00e4e;
+  font-size: 1.7rem;
+}
+
+.projtitle {
+  color: white;
+}
+
+.project-black {
+  color: #0f0f0f;
+  font-size: 1.7rem;
+}
+
+.projtitle-black {
+  color: #1d1d1d;
+  font-size: 1.3rem;
+}
+
+.projtitle-black p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.img-icon-post img {
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.img-icon-post i {
+  margin-right: 5px;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.PostDescription {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.paragraphePost {
+  /* min-height: 300px; */
+  border-radius: 10px;
+}
+
+.postTitle {
+  background-color: #451dac;
+  /* border-top-right-radius: 20px;
+                  border-bottom-right-radius: 20px; */
+}
+
+.text-justify a {
+  text-decoration: none;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #451dac;
+  border-radius: 20px;
+}
+
+.text-justify a:hover {
+  background-color: #9901ff;
+}
+
+.imgPost {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  -webkit-box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px -1px 9px 0px rgba(0, 0, 0, 0.18);
+  height: 100% !important;
+}
+
+.tagsPost {
+  text-decoration: none;
+  color: white;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 20px;
+  background: #373737;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.tagsBloc {
+  bottom: 11px;
+}
+
+.contentPost {
+  min-height: 150px;
+}
+
+/*############ Caroussel ############*/
+.carousel-inner {
+  border-radius: 14px;
+}
+
+div.carousel-caption {
+  text-shadow: 2px 2px 2px black;
+  text-align: left;
+  right: auto;
+  border-radius: 22px;
+  padding-bottom: 4px;
+  padding-top: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 1.1rem;
+}
+
+.captionCarouTitle {
+  background-color: #1b1b1b;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0px -1px 6px 2px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px -1px 6px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px -1px 6px 2px rgba(0, 0, 0, 0.16);
+}
+
+.captionCarou {
+  background-color: #949494;
+  text-transform: uppercase;
+  color: wheat;
+}
