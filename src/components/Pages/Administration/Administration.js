@@ -172,10 +172,7 @@ const Administration = () => {
                   <td>{post.git}</td>
                   <td>{post.date}|date("d/m/y")</td>
                   <td>
-                    <Link
-                      className="mr-2"
-                      to="{{ path('post_show', {'id': post.id}) }}"
-                    >
+                    <Link className="mr-2" to={`/post-${post.id}`}>
                       <i className="far fa-eye"></i>
                     </Link>
                     <Link
