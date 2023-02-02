@@ -2,29 +2,28 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import ThemeSwitcher from "./components/Common/Buttons/ThemeSwitcher";
 import ThemeContext from "./store/ThemeContext";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import Administration from "./components/Pages/Administration/Administration";
 import PDFViewer from "./components/Common/PDFViewer/PDFViewer";
 import Post from "./components/Pages/Post/Post";
 import Create from "./components/Pages/Post/Form/Create";
-/* import logo from './logo.svg';
-
-export default function App(){
-  return (
-    <div className="App">
-      <h1>Hello there</h1>
-      <h2>Start editiong blmadja jdajz dja zd</h2>
-    </div>
-  );
-}
-*/
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:8000/posts")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  }, []);
+  console.log(message);
+
   //render
   return (
     // <ThemeContext.Provider value={contextValue}>
+
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />

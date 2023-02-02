@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
 const Cards = (props) => {
-  const fetchCards = [
+  const fetchCardes = [
     {
       id: 0,
       title: "test",
@@ -106,7 +106,7 @@ const Cards = (props) => {
     <div className="container-fluid mt-5">
       <div className="box devBox active">
         <div className="row justify-content-center flex-wrap">
-          {fetchCards
+          {fetchCardes
             .filter((card) => card.category === props.value)
             .map((card, index) => (
               <Link key={index} to={`/post/${card.id}`}>
