@@ -1,0 +1,72 @@
+.pagination {
+  justify-content: center;
+}
+
+#mobile-burger {
+  display: none;
+}
+
+.adminTitle {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.adminUserTitle {
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  background-color: #161616;
+  height: 100vh;
+}
+
+.adminUserTitle ul {
+  list-style: none;
+  padding-left: 0;
+  line-height: 45px;
+  font-size: 1.1rem;
+}
+
+.adminUserTitle ul li {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: 0.4s;
+}
+
+.adminUserTitle ul li:hover {
+  transition: 0.4s;
+  background-color: #4c19da;
+  font-size: 1rem;
+}
+
+.tableStyle {
+  -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.44);
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.44);
+}
+
+.UserAdmin {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #606bff;
+}
+
+.UserAdmin b {
+  font-size: 0.95rem;
+}
+
+.line-bottom a {
+  text-decoration: none;
+  color: white;
+}
+
+.line-bottom {
+  border-bottom: 3px dotted white;
+  padding-right: 5px;
+}
+
+.editProfile a {
+  text-decoration: none;
+  color: white;
+}
