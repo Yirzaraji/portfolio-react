@@ -4,6 +4,7 @@ const useTheme = () => {
   const [theme, setTheme] = useState("light");
 
   const switchTheme = () => {
+    //if theme === light then going dark else going light
     setTheme(theme === "light" ? "dark" : "light");
   };
 
