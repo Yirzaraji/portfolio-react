@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useGetPosts from "../../../../hooks/Posts";
 import "./Card.css";
+import Tags from "./Tags";
 
 const Cards = (props) => {
   //custom hooks src/hooks
@@ -27,7 +28,7 @@ const Cards = (props) => {
                     <div className="newsCaption-content col-12">
                       <span className="techTxt">Technologies</span>
                       <p className="mt-1">
-                        <span className="tagsCards">{post.tags}</span>
+                        <Tags value={post} />
                       </p>
                     </div>
                   </div>

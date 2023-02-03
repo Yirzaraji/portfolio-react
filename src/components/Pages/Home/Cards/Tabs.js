@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Cards from "./Cards";
 const Tabs = () => {
-  const [selectedCardsTab, setSelectedCardsTab] = useState(1);
+  const [selectedCardsTab, setSelectedCardsTab] = useState(0);
   const cardsTab = [
     { id: 0, content: "Front" },
     { id: 1, content: "Design" },
