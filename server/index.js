@@ -1,112 +1,22 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
+const db = require("./models");
 
-app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(cors());
 
-const fetchCards = [
-  {
-    id: 0,
-    title: "test",
-    image: "images/escargeddon.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Dev",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-  {
-    id: 1,
-    title: "test",
-    image: "images/lfp.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Design",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-  {
-    id: 2,
-    title: "test",
-    image: "images/escargeddon.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Design",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-  {
-    id: 3,
-    title: "test",
-    image: "images/lfp.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Dev",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-  {
-    id: 4,
-    title: "test",
-    image: "images/escargeddon.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Print",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-  {
-    id: 5,
-    title: "test",
-    image: "images/lfp.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Dev",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-  {
-    id: 6,
-    title: "test",
-    image: "images/escargeddon.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Dev",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-  {
-    id: 7,
-    title: "test",
-    image: "images/lfp.jpg",
-    description: "blabla",
-    demo: "pathlink",
-    category: "Dev",
-    git: "pathgit",
-    gallery: "pathimages",
-    tags: "Js, React, Node",
-    data: "22/12/2023",
-  },
-];
-
-app.get("/posts", (req, res) => {
-  res.send({ message: "Hello from server!" });
+app.get("/api/posts", (req, res) => {
+  db.Posts.findAll().then((posts) => {
+    res.send(posts);
+  });
 });
+
+// app.get("/posts", (req, res) => {
+//   res.send({ messageh: "Hello from server!" });
+// });
 
 app.listen(8000, () => {
   console.log(`Server is running on port 8000.`);
