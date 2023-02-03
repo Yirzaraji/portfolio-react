@@ -3,9 +3,9 @@ import Cards from "./Cards";
 const Tabs = () => {
   const [selectedCardsTab, setSelectedCardsTab] = useState(1);
   const cardsTab = [
-    { id: 0, content: "Dev", test: "test0" },
-    { id: 1, content: "Design", test: "test1" },
-    { id: 2, content: "Print", test: "test2" },
+    { id: 0, content: "Front" },
+    { id: 1, content: "Design" },
+    { id: 2, content: "Back" },
   ];
 
   return (
