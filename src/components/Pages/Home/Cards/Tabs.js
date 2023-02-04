@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Cards from "./Cards";
 const Tabs = () => {
-  const [selectedCardsTab, setSelectedCardsTab] = useState(0);
-  const cardsTab = [
+  const [tabs, setTabs] = useState(0);
+  const datas = [
     { id: 0, content: "Front" },
-    { id: 1, content: "Design" },
+    { id: 1, content: "All" },
     { id: 2, content: "Back" },
   ];
 
@@ -27,16 +27,12 @@ const Tabs = () => {
       <div className="row">
         <div className="col-md-12 text-center mb-5">
           <ul className="navTabs list_js">
-            {cardsTab.map((selectedTab, index) => (
-              <li
-                key={index}
-                onClick={() => setSelectedCardsTab(index)}
-                id={selectedTab.id}
-              >
-                {selectedTab.content}
+            {datas.map((data, index) => (
+              <li key={index} onClick={() => setTabs(index)} id={data.id}>
+                {data.content}
               </li>
             ))}
-            <Cards value={cardsTab[selectedCardsTab].content} />
+            <Cards value={datas[tabs].content} />
           </ul>
         </div>
       </div>

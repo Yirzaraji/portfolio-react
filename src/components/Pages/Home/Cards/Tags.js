@@ -30,7 +30,6 @@ const Tags = (props) => {
       }
     });
   });
-
-  <span className="tagsCards">{props.tag}</span>;
+  return <span className="tagsCards">{props.tags}</span>;
 };
 export default Tags;

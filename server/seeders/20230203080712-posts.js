@@ -3,11 +3,28 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
       let random = Math.floor(Math.random() * i);
       const categories = ["Front", "Design", "Back"];
+      const tags = [
+        "sql",
+        "php",
+        "symfony",
+        "react.js",
+        "js",
+        "node.js",
+        "html",
+        "css",
+        "unity",
+        "c#",
+        "bootstrap",
+        "photoshop",
+        "illustrator",
+        "indesign",
+      ];
 
       const rand = Math.floor(Math.random() * categories.length);
+      const randTag = Math.floor(Math.random() * tags.length);
       console.log(categories[rand]);
 
       const data = [
@@ -18,7 +35,7 @@ module.exports = {
           paragraph: "zqdloremqdqdipsum",
           category: categories[rand],
           demo: "http://blabla.fr",
-          tags: "js, react",
+          tags: tags[randTag],
           git: "http://gitub.com",
           images: "images/test2.jpg",
           createdAt: new Date(),
