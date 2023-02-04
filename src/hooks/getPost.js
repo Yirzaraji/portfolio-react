@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const useGetPosts = () => {
-  const [posts, setPosts] = useState([]);
+const useGetPost = (id) => {
+  const [post, setPost] = useState([]);
   const API_URL = process.env.API_URL;
-  console.log(process.env.API_URL);
 
   useEffect(() => {
     const data = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/posts`);
-        setPosts(response.data);
+        const response = await axios.get(
+          `http://localhost:8080/api${window.location.pathname}`
+        );
+        setPost(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -18,7 +19,7 @@ const useGetPosts = () => {
     data();
   }, []);
 
-  return posts;
+  return post;
 };
 
-export default useGetPosts;
+export default useGetPost;

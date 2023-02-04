@@ -31,7 +31,7 @@ module.exports = {
         {
           title: "Front end react",
           description: "qdzqqdzqd",
-          image: `https://picsum.photos/290/240?random=${random}`,
+          image: `https://picsum.photos/390/340?random=${random}`,
           paragraph: "zqdloremqdqdipsum",
           category: categories[rand],
           demo: "http://blabla.fr",

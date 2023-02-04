@@ -1,5 +1,5 @@
 import React from "react";
-const Content = () => (
+const Content = (post) => (
   <div className="container-fluid">
     <div className="row justify-content-center">
       <div
@@ -8,7 +8,7 @@ const Content = () => (
       >
         <div className="row justify-content-center">
           <div className="col-md-8 text-justify pt-5 pb-5" id="post-txt">
-            post.paragraphe
+            {post.value.paragraph}
           </div>
         </div>
       </div>

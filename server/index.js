@@ -1,23 +1,45 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const PostsService = require("./service/PostsService");
 const cors = require("cors");
 const app = express();
 const db = require("./models");
 
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(cors());
+const bootServer = async () => {
+  app.use(cors());
+  // server configuration
+  const PORT = 8080;
 
-app.get("/api/posts", (req, res) => {
-  db.Posts.findAll().then((posts) => {
-    res.send(posts);
+  app.use(bodyParser.json());
+
+  app.get("/api/posts", (req, res) => {
+    db.Posts.findAll().then((posts) => {
+      res.send(posts);
+    });
   });
-});
 
-// app.get("/posts", (req, res) => {
-//   res.send({ messageh: "Hello from server!" });
-// });
+  //Read
+  app.get("/api/post/:id", async (req, res, next) => {
+    const { id } = req.params;
+    const post = await PostsService.readPost(id);
+    res.send(post);
+  });
 
-app.listen(8000, () => {
-  console.log(`Server is running on port 8000.`);
-});
+  //Create
+  app.post("/administration/post/create", async (req, res, next) => {
+    await db.Posts.create(req.body);
+    res.sendStatus(201);
+  });
+
+  // app.get("/posts", (req, res) => {
+  //   res.send({ messageh: "Hello from server!" });
+  // });
+  app.use((req, res, next) => {
+    res.sendStatus(404);
+  });
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on port 8080.`);
+  });
+};
+bootServer().catch(console.error);

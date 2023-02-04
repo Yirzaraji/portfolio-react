@@ -1,5 +1,5 @@
 import React from "react";
-const Carousel = () => (
+const Carousel = (post) => (
   <div className="container-fluidp-5">
     <div className="row justify-content-center">
       <div className="col-sm-10 col-md-11 col-lg-9 carouselPost">
@@ -18,7 +18,7 @@ const Carousel = () => (
           </ol>
           <div className="carousel-inner border">
             {/* {% for image in post.images %} */}
-            <div className="carousel-item {% if loop.first %}active{% endif %}">
+            <div className="carousel-item {% if loop.first %} active {% endif %}">
               <img
                 className="d-block w-100"
                 src="{image.url }"

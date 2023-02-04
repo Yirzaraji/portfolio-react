@@ -1,110 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import NavbarAdmin from "../Navbar/NavbarAdmin";
+import useGetPosts from "../../../hooks/getPosts";
 import "./Administration.css";
 
 const Administration = () => {
-  const posts = [
-    {
-      id: 0,
-      title: "test",
-      image: "images/escargeddon.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Dev",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-    {
-      id: 1,
-      title: "test",
-      image: "images/lfp.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Design",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-    {
-      id: 2,
-      title: "test",
-      image: "images/escargeddon.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Design",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-    {
-      id: 3,
-      title: "test",
-      image: "images/lfp.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Dev",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-    {
-      id: 4,
-      title: "test",
-      image: "images/escargeddon.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Print",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-    {
-      id: 5,
-      title: "test",
-      image: "images/lfp.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Dev",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-    {
-      id: 6,
-      title: "test",
-      image: "images/escargeddon.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Dev",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-    {
-      id: 7,
-      title: "test",
-      image: "images/lfp.jpg",
-      description: "blabla",
-      demo: "pathlink",
-      category: "Dev",
-      git: "pathgit",
-      gallery: "pathimages",
-      tags: "Js, React, Node",
-      data: "22/12/2023",
-    },
-  ];
-
+  const posts = useGetPosts();
   return (
-    <div class="section">
+    <div className="section">
       <NavbarAdmin />
       <div className="container-fluid">
         <div className="row justify-content-center">
@@ -173,7 +76,7 @@ const Administration = () => {
                     <td>{post.category}</td>
                     <td>{post.demo}</td>
                     <td>{post.git}</td>
-                    <td>{post.date}|date("d/m/y")</td>
+                    <td>{post.createdAt}</td>
                     <td>
                       <Link className="mr-2" to={`/post/${post.id}`}>
                         <i className="far fa-eye"></i>

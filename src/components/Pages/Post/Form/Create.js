@@ -1,8 +1,9 @@
 import { React, useState } from "react";
 import "../Post.css";
+import axios from "axios";
 
 const Create = () => {
-  const [values, setValues] = useState({
+  const [formData, setFormData] = useState({
     title: "",
     description: "",
     paragraphe: "",
@@ -15,22 +16,35 @@ const Create = () => {
   });
 
   const handleChange = (event) => {
-    setValues({
-      ...values,
+    setFormData({
+      ...formData,
       [event.target.name]: event.target.value,
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(values);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/administration/post/create",
+        formData
+      );
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div className="container">
       <div className="row d-flex justify-content-center">
         <div className="col-md-8 light text-center mt-3 mb-5">
-          <form onSubmit={handleSubmit} action="" method="POST">
+          <form
+            onSubmit={handleSubmit}
+            action="http://localhost:8080/administration/post/create"
+            method="POST"
+          >
             <h3 className="titleFormColor mb-4">
               <b>CREATE POST</b>
             </h3>
