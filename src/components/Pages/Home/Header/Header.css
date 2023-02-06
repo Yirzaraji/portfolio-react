@@ -59,6 +59,9 @@ p:nth-child(3) {
 .bannerLowpolyImg {
   padding-left: 0;
   padding-right: 0;
+  background-image: url("../../../../../public/images/lowpoly_banner02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bandeauContact {

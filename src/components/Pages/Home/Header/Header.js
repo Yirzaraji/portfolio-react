@@ -44,13 +44,7 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="col-sm-7 col-md-7 bannerLowpolyImg">
-          <img
-            src="images/lowpoly_banner02.jpg"
-            alt="banner"
-            className="w-100 h-100 img-responsive cover"
-          />
-        </div>
+        <div className="col-sm-7 col-md-7 bannerLowpolyImg"></div>
       </div>
     </div>
   );

@@ -9,9 +9,11 @@ import Administration from "./components/Pages/Administration/Administration";
 import PDFViewer from "./components/Common/PDFViewer/PDFViewer";
 import Post from "./components/Pages/Post/Post";
 import Create from "./components/Pages/Post/Form/Create";
+require("dotenv").config();
 
 function App() {
-  const url = "http://localhost:8000";
+  const API_URL = process.env.API_URL;
+  console.log("targ " + API_URL);
   //render
   return (
     // <ThemeContext.Provider value={contextValue}>
