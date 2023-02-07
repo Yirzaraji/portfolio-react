@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavbarAdmin from "../Navbar/NavbarAdmin";
-import useGetPosts from "../../../hooks/getPosts";
-import useGetPost from "../../../hooks/getPost";
 import axios from "axios";
 import "./Administration.css";
 
 const Administration = () => {
-  const [deletePost, setDeletePost] = useState(null);
-  const posts = useGetPosts();
+  const [posts, setPosts] = useState([]);
+  const API_URL = process.env.REACT_APP_URL;
 
-  const handleClick = async (event) => {
+  useEffect(() => {
+    const data = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/posts`);
+        setPosts(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    data();
+  }, []);
+
+  const handleClick = async (id, event) => {
     event.preventDefault();
-
-    const url = event.target.parentElement.attributes.href.value;
-    const id = url.split("/").pop();
-    const API_URL = process.env.REACT_APP_URL + "/api/post/delete/" + id;
     try {
-      const response = await axios.delete(`${API_URL}`);
-      setDeletePost(response.status);
+      await axios.delete(`http://localhost:8080/api/post/delete/${id}`);
+      setPosts(posts.filter((post) => post.id !== id));
     } catch (error) {
       console.error(error);
     }
@@ -86,7 +93,7 @@ const Administration = () => {
               </thead>
               <tbody>
                 {posts.map((post, index) => (
-                  <tr key={index}>
+                  <tr key={post.id}>
                     <th scope="row">{post.id}</th>
                     <td>{post.title}</td>
                     <td>{post.image}</td>
@@ -104,8 +111,8 @@ const Administration = () => {
                       </Link>
                       <Link
                         className="mr-2"
-                        onClick={handleClick}
-                        to={`/post/delete/${post.id}`}
+                        to={`#`}
+                        onClick={(event) => handleClick(post.id, event)}
                       >
                         <i className="far fa-trash-alt"></i>
                       </Link>
