@@ -31,9 +31,12 @@ const bootServer = async () => {
     res.sendStatus(201);
   });
 
-  // app.get("/posts", (req, res) => {
-  //   res.send({ messageh: "Hello from server!" });
-  // });
+  app.delete("/api/post/delete/:id", async (req, res, next) => {
+    const { id } = req.params;
+    await PostsService.deletePost(id);
+    res.sendStatus(200);
+  });
+
   app.use((req, res, next) => {
     res.sendStatus(404);
   });

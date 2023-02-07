@@ -3,12 +3,12 @@ import axios from "axios";
 
 const useGetPosts = () => {
   const [posts, setPosts] = useState([]);
-  const API_URL = process.env.API_URL;
+  const API_URL = process.env.REACT_APP_URL;
 
   useEffect(() => {
     const data = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/posts`);
+        const response = await axios.get(`${API_URL}/api/posts`);
         setPosts(response.data);
       } catch (error) {
         console.error(error);

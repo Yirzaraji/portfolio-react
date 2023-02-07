@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const useGetPost = () => {
+const useDeletePost = (id) => {
   const [post, setPost] = useState([]);
 
   //catch the id param of the url when the function useGetPost in called inside the component
   const getId = window.location.pathname.split("/").pop();
-  const API_URL = process.env.REACT_APP_URL + "/api/post/" + getId;
+  const API_URL = process.env.REACT_APP_URL + "/api/post/delete/" + getId;
 
   useEffect(() => {
     const data = async () => {
@@ -23,4 +23,4 @@ const useGetPost = () => {
   return post;
 };
 
-export default useGetPost;
+export default useDeletePost;

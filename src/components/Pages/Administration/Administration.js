@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarAdmin from "../Navbar/NavbarAdmin";
 import useGetPosts from "../../../hooks/getPosts";
+import useGetPost from "../../../hooks/getPost";
+import axios from "axios";
 import "./Administration.css";
 
 const Administration = () => {
+  const [deletePost, setDeletePost] = useState(null);
   const posts = useGetPosts();
+
+  const handleClick = async (event) => {
+    event.preventDefault();
+
+    const url = event.target.parentElement.attributes.href.value;
+    const id = url.split("/").pop();
+    const API_URL = process.env.REACT_APP_URL + "/api/post/delete/" + id;
+    try {
+      const response = await axios.delete(`${API_URL}`);
+      setDeletePost(response.status);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="section">
       <NavbarAdmin />
@@ -84,7 +102,11 @@ const Administration = () => {
                       <Link className="mr-2" to={`/post/edit/${post.id}`}>
                         <i className="far fa-edit"></i>
                       </Link>
-                      <Link className="mr-2" to={`/post/delete/${post.id}`}>
+                      <Link
+                        className="mr-2"
+                        onClick={handleClick}
+                        to={`/post/delete/${post.id}`}
+                      >
                         <i className="far fa-trash-alt"></i>
                       </Link>
                     </td>
