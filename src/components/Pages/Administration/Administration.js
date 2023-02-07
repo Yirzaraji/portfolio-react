@@ -6,7 +6,7 @@ import "./Administration.css";
 
 const Administration = () => {
   const [posts, setPosts] = useState([]);
-  const API_URL = process.env.REACT_APP_URL;
+  let API_URL = process.env.REACT_APP_URL;
 
   useEffect(() => {
     const data = async () => {
@@ -19,12 +19,13 @@ const Administration = () => {
     };
 
     data();
-  }, []);
+  });
 
   const handleClick = async (id, event) => {
     event.preventDefault();
+    let API_URL = process.env.REACT_APP_URL + "/api/post/delete/" + id;
     try {
-      await axios.delete(`http://localhost:8080/api/post/delete/${id}`);
+      await axios.delete(API_URL);
       setPosts(posts.filter((post) => post.id !== id));
     } catch (error) {
       console.error(error);
