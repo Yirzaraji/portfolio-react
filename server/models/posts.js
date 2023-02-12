@@ -13,15 +13,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   Posts.init(
     {
-      title: DataTypes.STRING,
-      description: DataTypes.STRING,
-      image: DataTypes.STRING,
-      paragraph: DataTypes.STRING,
-      category: DataTypes.STRING,
-      demo: DataTypes.STRING,
-      tags: DataTypes.STRING,
-      git: DataTypes.STRING,
-      images: DataTypes.STRING,
+      title: { type: DataTypes.STRING, allowNull: false },
+      description: { type: DataTypes.STRING, allowNull: false },
+      image: { type: DataTypes.STRING, allowNull: false },
+      paragraph: { type: DataTypes.STRING, allowNull: false },
+      category: { type: DataTypes.STRING, allowNull: false },
+      demo: { type: DataTypes.STRING, allowNull: false },
+      tags: { type: DataTypes.STRING, allowNull: false },
+      git: { type: DataTypes.STRING, allowNull: false },
+      images: { type: DataTypes.STRING, allowNull: false },
     },
     {
       sequelize,

@@ -37,6 +37,17 @@ const bootServer = async () => {
     res.sendStatus(200);
   });
 
+  //edit a post
+  app.put("/api/post/update/:id", async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      await PostsService.updatePost(req.body, id);
+      res.sendStatus(200);
+    } catch (error) {
+      res.status(500).send(error.message);
+    }
+  });
+
   app.use((req, res, next) => {
     res.sendStatus(404);
   });

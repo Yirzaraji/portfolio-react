@@ -9,6 +9,7 @@ import Administration from "./components/Pages/Administration/Administration";
 import PDFViewer from "./components/Common/PDFViewer/PDFViewer";
 import Post from "./components/Pages/Post/Post";
 import Create from "./components/Pages/Post/Form/Create";
+import Update from "./components/Pages/Post/Form/Update";
 
 function App() {
   //render
@@ -22,6 +23,7 @@ function App() {
         <Route path="/administration" element={<Administration />} />
         <Route path="/administration/post/create" element={<Create />} />
         <Route path="/administration/post/delete/:id" />
+        <Route path="/administration/post/update/:id" element={<Update />} />
         <Route path="/post/:id" element={<Post />} />
         <Route
           path="/cv"

@@ -17,6 +17,11 @@ class PostsService {
   static deletePost(id) {
     return db.Posts.destroy({ where: { id } });
   }
+
+  //Update a Product
+  static updatePost(postBody, id) {
+    return db.Posts.update(postBody, { where: { id } });
+  }
 }
 
 module.exports = PostsService;

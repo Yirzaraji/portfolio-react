@@ -107,7 +107,7 @@ const Administration = () => {
                       <Link className="mr-2" to={`/post/${post.id}`}>
                         <i className="far fa-eye"></i>
                       </Link>
-                      <Link className="mr-2" to={`/post/edit/${post.id}`}>
+                      <Link className="mr-2" to={`post/update/${post.id}`}>
                         <i className="far fa-edit"></i>
                       </Link>
                       <Link
