@@ -19,7 +19,7 @@ const Administration = () => {
     };
 
     data();
-  });
+  }, []);
 
   //ID value is passed onclick from the deleted button
   const handleClick = async (id, event) => {
