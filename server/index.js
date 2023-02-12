@@ -38,10 +38,19 @@ const bootServer = async () => {
   });
 
   //edit a post
-  app.put("/api/post/update/:id", async (req, res, next) => {
+  app.patch("/api/post/update/:id", async (req, res, next) => {
     try {
       const { id } = req.params;
-      await PostsService.updatePost(req.body, id);
+      const formData = {};
+
+      //prevent empty inputs form data to be sent
+      for (const key in req.body) {
+        if (req.body[key]) {
+          formData[key] = req.body[key];
+        }
+      }
+
+      await PostsService.updatePost(formData, id);
       res.sendStatus(200);
     } catch (error) {
       res.status(500).send(error.message);

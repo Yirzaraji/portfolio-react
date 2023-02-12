@@ -26,7 +26,7 @@ const Update = () => {
     event.preventDefault();
     const id = window.location.pathname.split("/").pop();
     try {
-      const response = await axios.put(
+      const response = await axios.patch(
         `http://localhost:8080/api/post/update/${id}`,
         formData
       );
