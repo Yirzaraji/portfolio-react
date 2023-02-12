@@ -21,6 +21,7 @@ const Administration = () => {
     data();
   });
 
+  //ID value is passed onclick from the deleted button
   const handleClick = async (id, event) => {
     event.preventDefault();
     let API_URL = process.env.REACT_APP_URL + "/api/post/delete/" + id;

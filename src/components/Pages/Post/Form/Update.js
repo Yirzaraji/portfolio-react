@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "../../Post/Post.css";
 import axios from "axios";
-console.log(process.env.REACT_APP_URL);
+
 const Update = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -22,11 +22,11 @@ const Update = () => {
     });
   };
 
-  const handleSubmit = async (event, id) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
+    const id = window.location.pathname.split("/").pop();
     try {
-      const response = await axios.post(
+      const response = await axios.put(
         `http://localhost:8080/api/post/update/${id}`,
         formData
       );
