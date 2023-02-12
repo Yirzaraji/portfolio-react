@@ -18,7 +18,7 @@ const useGetPost = () => {
       }
     };
     data();
-  });
+  }, []);
 
   return post;
 };
