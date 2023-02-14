@@ -40,11 +40,7 @@ const Create = () => {
     <div className="container">
       <div className="row d-flex justify-content-center">
         <div className="col-md-8 light text-center mt-3 mb-5">
-          <form
-            onSubmit={handleSubmit}
-            action="http://localhost:8080/administration/post/create"
-            method="POST"
-          >
+          <form onSubmit={handleSubmit}>
             <h3 className="titleFormColor mb-4">
               <b>CREATE POST</b>
             </h3>

@@ -1,8 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import ThemeSwitcher from "./components/Common/Buttons/ThemeSwitcher";
-import ThemeContext from "./stores/ThemeContext";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import Administration from "./components/Pages/Administration/Administration";

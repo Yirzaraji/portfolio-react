@@ -37,7 +37,7 @@ const bootServer = async () => {
     res.sendStatus(200);
   });
 
-  //edit a post
+  //update
   app.patch("/api/post/update/:id", async (req, res, next) => {
     try {
       const { id } = req.params;

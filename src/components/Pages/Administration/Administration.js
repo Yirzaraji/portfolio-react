@@ -82,7 +82,7 @@ const Administration = () => {
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Title</th>
-                  <th scope="col">Project_Image</th>
+                  <th scope="col">image</th>
                   <th scope="col">Description</th>
                   <th scope="col">Categorie</th>
                   <th scope="col">Demo Lien</th>

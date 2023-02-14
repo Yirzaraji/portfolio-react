@@ -1,8 +1,8 @@
-import { React, useState } from "react";
-import "../../Post/Post.css";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Update = () => {
+function Update() {
+  const id = window.location.pathname.split("/").pop();
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -15,16 +15,32 @@ const Update = () => {
     images: "",
   });
 
+  //prefill form field after component is mounted
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`http://localhost:8080/api/post/${id}`);
+      const data = await response.json();
+      setFormData({
+        title: data.title,
+        description: data.description,
+        paragraph: data.paragraph,
+        image: data.image,
+        category: data.category,
+        demo: data.demo,
+        tags: data.tags,
+        git: data.git,
+        images: data.images,
+      });
+    };
+    fetchData();
+  }, []);
+
   const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const id = window.location.pathname.split("/").pop();
     try {
       const response = await axios.patch(
         `http://localhost:8080/api/post/update/${id}`,
@@ -40,13 +56,9 @@ const Update = () => {
     <div className="container">
       <div className="row d-flex justify-content-center">
         <div className="col-md-8 light text-center mt-3 mb-5">
-          <form
-            onSubmit={handleSubmit}
-            action="http://localhost:8080/administration/post/create"
-            method="POST"
-          >
+          <form onSubmit={handleSubmit}>
             <h3 className="titleFormColor mb-4">
-              <b>CREATE POST</b>
+              <b>Update</b>
             </h3>
             <div className="form-group">
               <div className="row mb-1">
@@ -56,6 +68,7 @@ const Update = () => {
                     className="form-control"
                     placeholder="title"
                     name="title"
+                    value={formData.title}
                     onChange={handleChange}
                   />
                 </div>
@@ -70,6 +83,7 @@ const Update = () => {
                     placeholder="description"
                     name="description"
                     onChange={handleChange}
+                    value={formData.description}
                   />
                 </div>
               </div>
@@ -80,8 +94,9 @@ const Update = () => {
                   <textarea
                     className="form-control"
                     placeholder="paragraphe"
-                    name="paragraphe"
+                    name="paragraph"
                     onChange={handleChange}
+                    value={formData.paragraph}
                   ></textarea>
                 </div>
               </div>
@@ -90,11 +105,12 @@ const Update = () => {
               <div className="row mb-1">
                 <div className="col">
                   <input
-                    type="file"
+                    type="text"
                     className="form-control"
                     placeholder="image"
                     name="image"
                     onChange={handleChange}
+                    value={formData.image}
                   />
                 </div>
               </div>
@@ -108,6 +124,7 @@ const Update = () => {
                     placeholder="category (front, back, design)"
                     name="category"
                     onChange={handleChange}
+                    value={formData.category}
                   />
                 </div>
                 <div className="col">
@@ -117,6 +134,7 @@ const Update = () => {
                     placeholder="demo"
                     name="demo"
                     onChange={handleChange}
+                    value={formData.demo}
                   />
                 </div>
               </div>
@@ -130,6 +148,7 @@ const Update = () => {
                     placeholder="tags collection"
                     name="tags"
                     onChange={handleChange}
+                    value={formData.tags}
                   />
                 </div>
                 <div className="col">
@@ -139,6 +158,7 @@ const Update = () => {
                     placeholder="git"
                     name="git"
                     onChange={handleChange}
+                    value={formData.git}
                   />
                 </div>
               </div>
@@ -152,6 +172,7 @@ const Update = () => {
                     placeholder="images collection"
                     name="images"
                     onChange={handleChange}
+                    value={formData.images}
                   />
                 </div>
               </div>
@@ -170,6 +191,6 @@ const Update = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Update;
