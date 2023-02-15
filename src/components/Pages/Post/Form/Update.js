@@ -1,8 +1,13 @@
 import React, { useState, useEffect, createElement } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Update() {
+  //redirection hook
+  const navigate = useNavigate();
+  //Catch :id param from url
   const id = window.location.pathname.split("/").pop();
+  //state
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -52,7 +57,7 @@ function Update() {
   const handleAddField = () => {
     setFormData({
       ...formData,
-      images: [...formData.images, "images collection"],
+      images: [...formData.images, "images/yourimage.jpg"],
     });
   };
 
@@ -64,6 +69,7 @@ function Update() {
         formData
       );
       console.log(response);
+      navigate("/administration");
     } catch (error) {
       console.error(error);
     }
