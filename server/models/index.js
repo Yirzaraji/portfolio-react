@@ -1,5 +1,4 @@
-"use strict";
-
+// Import modules and initialize Sequelize
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
@@ -21,6 +20,7 @@ if (config.use_env_variable) {
   );
 }
 
+// Import models
 fs.readdirSync(__dirname)
   .filter((file) => {
     return (
@@ -38,13 +38,18 @@ fs.readdirSync(__dirname)
     db[model.name] = model;
   });
 
+// Define associations
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
 
+// Export Sequelize instance and models
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+// Sync models with the database
+//sequelize.sync();
 
 module.exports = db;

@@ -1,6 +1,8 @@
 import React from "react";
+
 const Carousel = (post) => (
   <div className="container-fluidp-5">
+    {console.log(post.value.images)}
     <div className="row justify-content-center">
       <div className="col-sm-10 col-md-11 col-lg-9 carouselPost">
         <div
@@ -17,15 +19,15 @@ const Carousel = (post) => (
             ></li>
           </ol>
           <div className="carousel-inner border">
-            {/* {% for image in post.images %} */}
+            {/* {images.map((image) => ( */}
             <div className="carousel-item {% if loop.first %} active {% endif %}">
               <img
                 className="d-block w-100"
-                src="{image.url }"
+                src="./images/carousel/escargeddon-skin.jpg"
                 alt="First slide"
               />
-              {/* {% endfor %} */}
             </div>
+            {/* ))} */}
             <a
               className="carousel-control-prev"
               href="#carouselExampleIndicators"

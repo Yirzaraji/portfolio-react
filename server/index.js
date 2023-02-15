@@ -26,7 +26,7 @@ const bootServer = async () => {
   });
 
   //Create
-  app.post("/administration/post/create", async (req, res, next) => {
+  app.post("/api/post/create", async (req, res, next) => {
     await db.Posts.create(req.body);
     res.sendStatus(201);
   });

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createElement } from "react";
 import axios from "axios";
 
 function Update() {
@@ -6,37 +6,54 @@ function Update() {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    paragraphe: "",
+    paragraph: "",
     image: "",
     category: "",
     demo: "",
     tags: "",
     git: "",
-    images: "",
+    images: [],
   });
 
-  //prefill form field after component is mounted
+  // retrieve data
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:8080/api/post/${id}`);
-      const data = await response.json();
-      setFormData({
-        title: data.title,
-        description: data.description,
-        paragraph: data.paragraph,
-        image: data.image,
-        category: data.category,
-        demo: data.demo,
-        tags: data.tags,
-        git: data.git,
-        images: data.images,
-      });
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/api/post/${id}`
+        );
+        setFormData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    if (event.target.name === "images") {
+      const newImages = [...formData.images];
+      //retrieve the field related to the datased id
+      newImages[event.target.dataset.id] = event.target.value;
+      setFormData({ ...formData, images: newImages });
+    } else {
+      setFormData({ ...formData, [event.target.name]: event.target.value });
+    }
+  };
+
+  const handleDeleteField = (index) => {
+    const updatedFormData = [...formData.images];
+    updatedFormData.splice(index, 1);
+    console.log(updatedFormData);
+    setFormData({ ...formData, images: updatedFormData });
+  };
+
+  //onclick push a new input field images in the state
+  const handleAddField = () => {
+    setFormData({
+      ...formData,
+      images: [...formData.images, "images collection"],
+    });
   };
 
   const handleSubmit = async (event) => {
@@ -163,23 +180,39 @@ function Update() {
                 </div>
               </div>
             </div>
-            <div className="form-group">
-              <div className="row mb-1">
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="images collection"
-                    name="images"
-                    onChange={handleChange}
-                    value={formData.images}
-                  />
+            <div className="form-group" id="imagesForm">
+              {formData.images.map((image, index) => (
+                <div key={index} className="row mb-2">
+                  <div className="col">
+                    <input
+                      key={index}
+                      type="text"
+                      className="form-control"
+                      placeholder="images collection"
+                      name="images"
+                      data-id={index}
+                      onChange={handleChange}
+                      value={image}
+                    />
+                  </div>
+                  <div
+                    className="btn btn-danger mb-3"
+                    onClick={() => handleDeleteField(index)}
+                  >
+                    x
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
             <div className="form-group">
               <div className="row mb-1">
                 <div className="col">
+                  <div
+                    className="btn btn-success mr-2"
+                    onClick={handleAddField}
+                  >
+                    +
+                  </div>
                   <button type="submit" className="btn btn-primary">
                     Submit
                   </button>

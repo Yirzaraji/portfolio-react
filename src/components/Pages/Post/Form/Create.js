@@ -12,7 +12,7 @@ const Create = () => {
     demo: "",
     tags: "",
     git: "",
-    images: "",
+    images: [],
   });
 
   const handleChange = (event) => {
@@ -27,7 +27,7 @@ const Create = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/administration/post/create",
+        "http://localhost:8080/api/post/create",
         formData
       );
       console.log(response);
@@ -86,7 +86,7 @@ const Create = () => {
               <div className="row mb-1">
                 <div className="col">
                   <input
-                    type="file"
+                    type="text"
                     className="form-control"
                     placeholder="image"
                     name="image"

@@ -13,19 +13,34 @@ module.exports = (sequelize, DataTypes) => {
   }
   Posts.init(
     {
-      title: { type: DataTypes.STRING, allowNull: false },
-      description: { type: DataTypes.STRING, allowNull: false },
-      image: { type: DataTypes.STRING, allowNull: false },
-      paragraph: { type: DataTypes.STRING, allowNull: false },
-      category: { type: DataTypes.STRING, allowNull: false },
-      demo: { type: DataTypes.STRING, allowNull: false },
-      tags: { type: DataTypes.STRING, allowNull: false },
-      git: { type: DataTypes.STRING, allowNull: false },
-      images: { type: DataTypes.STRING, allowNull: false },
+      title: { type: DataTypes.STRING, allowNull: true },
+      description: { type: DataTypes.STRING, allowNull: true },
+      image: { type: DataTypes.STRING, allowNull: true },
+      paragraph: { type: DataTypes.STRING, allowNull: true },
+      category: { type: DataTypes.STRING, allowNull: true },
+      demo: { type: DataTypes.STRING, allowNull: true },
+      tags: { type: DataTypes.STRING, allowNull: true },
+      git: {
+        type: DataTypes.STRING,
+        defaultValue: null,
+        allowNull: true,
+      },
+      images: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        defaultValue: [null],
+        allowNull: true,
+      },
     },
     {
       sequelize,
       modelName: "Posts",
+      hooks: {
+        beforeSave: (instance, options) => {
+          if (instance.images && typeof instance.images === "string") {
+            instance.images = instance.images.split(",");
+          }
+        },
+      },
     }
   );
   return Posts;

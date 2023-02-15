@@ -37,7 +37,7 @@ module.exports = {
           demo: "http://blabla.fr",
           tags: tags[randTag],
           git: "http://gitub.com",
-          images: "images/test2.jpg",
+          images: ["images/test2.jpg", "images/test2.jpg"],
           createdAt: new Date(),
           updatedAt: new Date(),
         },
