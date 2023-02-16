@@ -25,6 +25,8 @@ module.exports = {
 
       const rand = Math.floor(Math.random() * categories.length);
       const randTag = Math.floor(Math.random() * tags.length);
+      const randTag2 = Math.floor(Math.random() * tags.length);
+      const randTag3 = Math.floor(Math.random() * tags.length);
       console.log(categories[rand]);
 
       const data = [
@@ -35,7 +37,7 @@ module.exports = {
           paragraph: "zqdloremqdqdipsum",
           category: categories[rand],
           demo: "http://blabla.fr",
-          tags: [tags[randTag], tags[randTag], tags[randTag]],
+          tags: [tags[randTag], tags[randTag2], tags[randTag3]],
           git: "http://gitub.com",
           images: ["images/test2.jpg", "images/test2.jpg"],
           createdAt: new Date(),

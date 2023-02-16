@@ -40,8 +40,12 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Posts",
       hooks: {
         beforeSave: (instance, options) => {
+          //need to check if the first "if" is really necessary (will have to run back "db migrate" after any changes)
           if (instance.images && typeof instance.images === "string") {
             instance.images = instance.images.split(",");
+          }
+          if (instance.tags && typeof instance.tags === "string") {
+            instance.tags = instance.tags.split(",");
           }
         },
       },

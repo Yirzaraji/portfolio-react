@@ -14,21 +14,26 @@ module.exports = {
       },
       title: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       description: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       image: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       paragraph: {
         type: Sequelize.STRING,
       },
       category: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       demo: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       tags: {
         type: Sequelize.ARRAY(Sequelize.STRING),
