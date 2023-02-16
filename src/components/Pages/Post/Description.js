@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TagsColor from "../../../hooks/TagsColor";
+import TagsColor from "hooks/TagsColor";
 
 const Description = (post) => {
   //Hook the logic to colorise tags

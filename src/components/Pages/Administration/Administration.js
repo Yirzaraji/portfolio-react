@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import NavbarAdmin from "../Navbar/NavbarAdmin";
+import NavbarAdmin from "components/Pages/Navbar/NavbarAdmin";
 import axios from "axios";
 import "./Administration.css";
 

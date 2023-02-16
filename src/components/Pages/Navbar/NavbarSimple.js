@@ -7,7 +7,7 @@ const NavbarSimple = () => (
     <div className="row justify-content-between">
       <div className="md-5 NavDesktopSimple align-items-center ml-5">
         <Link to="/">
-          <img src="images/logoround-simple.png" alt="logo" />
+          <img src="/images/logoround-simple.png" alt="logo" />
         </Link>
       </div>
       <div className="md-5 NavDesktopSimple align-items-center mr-5">

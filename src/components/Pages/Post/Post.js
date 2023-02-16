@@ -4,8 +4,8 @@ import Content from "./Content";
 import Description from "./Description";
 import TitleCarousel from "./TitleCarousel";
 import "./Post.css";
-import NavbarSimple from "../Navbar/NavbarSimple";
-import useGetPost from "../../../hooks/getPost";
+import NavbarSimple from "components/Pages/Navbar/NavbarSimple";
+import useGetPost from "hooks/getPost";
 
 const Show = () => {
   //custom hooks retrieve one post
