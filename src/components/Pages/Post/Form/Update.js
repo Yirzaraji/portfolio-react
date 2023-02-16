@@ -20,7 +20,7 @@ function Update() {
     images: [],
   });
 
-  // retrieve data
+  // when component is mounted, feth data and prefill form
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -19,7 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       paragraph: { type: DataTypes.STRING, allowNull: true },
       category: { type: DataTypes.STRING, allowNull: true },
       demo: { type: DataTypes.STRING, allowNull: true },
-      tags: { type: DataTypes.STRING, allowNull: true },
+      tags: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        defaultValue: [null],
+        allowNull: true,
+      },
       git: {
         type: DataTypes.STRING,
         defaultValue: null,
