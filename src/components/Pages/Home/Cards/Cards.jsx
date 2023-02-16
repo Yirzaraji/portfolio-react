@@ -29,8 +29,11 @@ const Cards = (props) => {
                       <div className="newsCaption-content col-12">
                         <span className="techTxt">Technologies</span>
                         <p className="mt-1">
-                          {console.log("taggt: " + post.tags)}
-                          <span className="tagsCards">{post.tags}</span>
+                          {post.tags.map((tag, index) => (
+                            <span key={index} className="tagsCards">
+                              {tag}
+                            </span>
+                          ))}
                         </p>
                       </div>
                     </div>
@@ -53,8 +56,11 @@ const Cards = (props) => {
                         <div className="newsCaption-content col-12">
                           <span className="techTxt">Technologies</span>
                           <p className="mt-1">
-                            {console.log("taggt: " + post.tags)}
-                            <span className="tagsCards">{post.tags}</span>
+                            {post.tags.map((tag, index) => (
+                              <span key={index} className="tagsCards">
+                                {tag}
+                              </span>
+                            ))}
                           </p>
                         </div>
                       </div>

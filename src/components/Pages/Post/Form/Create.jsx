@@ -1,12 +1,11 @@
-import React, { useState, useEffect, createElement } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import axios from "axios";
+import Submit from "./Submit";
+import { useNavigate } from "react-router-dom";
 
-function Update() {
+function Create() {
   //redirection hook
   const navigate = useNavigate();
-  //Catch :id param from url
-  const id = window.location.pathname.split("/").pop();
   //state
   const [formData, setFormData] = useState({
     title: "",
@@ -15,25 +14,10 @@ function Update() {
     image: "",
     category: "",
     demo: "",
-    tags: "",
+    tags: "tag",
     git: "",
     images: [],
   });
-
-  // when component is mounted, feth data and prefill form
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8080/api/post/${id}`
-        );
-        setFormData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, [id]);
 
   const handleChange = (event) => {
     if (event.target.name === "images") {
@@ -64,8 +48,8 @@ function Update() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.patch(
-        `http://localhost:8080/api/post/update/${id}`,
+      const response = await axios.post(
+        "http://localhost:8080/api/post/create",
         formData
       );
       console.log(response);
@@ -81,7 +65,7 @@ function Update() {
         <div className="col-md-8 light text-center mt-3 mb-5">
           <form onSubmit={handleSubmit}>
             <h3 className="titleFormColor mb-4">
-              <b>Update</b>
+              <b>Create</b>
             </h3>
             <div className="form-group">
               <div className="row mb-1">
@@ -219,9 +203,7 @@ function Update() {
                   >
                     +
                   </div>
-                  <button type="submit" className="btn btn-primary">
-                    Submit
-                  </button>
+                  <Submit />
                 </div>
               </div>
             </div>
@@ -232,4 +214,4 @@ function Update() {
   );
 }
 
-export default Update;
+export default Create;
