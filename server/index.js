@@ -9,7 +9,7 @@ const bootServer = async () => {
   app.use(cors());
   // server configuration
   const PORT = 8080;
-
+  //parse in json all request having a body that come from client or go from server to client
   app.use(bodyParser.json());
 
   app.get("/api/posts", (req, res) => {
@@ -62,7 +62,7 @@ const bootServer = async () => {
   });
 
   app.listen(PORT, () => {
-    console.log(`Server is running on port 8080.`);
+    console.log(`Server is running on ${PORT}.`);
   });
 };
 bootServer().catch(console.error);

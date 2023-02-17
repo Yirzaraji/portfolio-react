@@ -6,7 +6,7 @@ import Curriculum from "./Curriculum/Curriculum";
 import Skills from "./Skills/Skills";
 import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
-import Tabs from "./Cards/Tabs";
+import Cards from "./Cards/Cards";
 
 const Home = () => (
   <div className="main">
@@ -14,7 +14,7 @@ const Home = () => (
     <Header />
     <WhatIDo />
     <About />
-    <Tabs />
+    <Cards />
     <Curriculum />
     <Skills />
     <Contact />

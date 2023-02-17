@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cards from "./Cards";
 const Tabs = () => {
   const [tabs, setTabs] = useState(0);
