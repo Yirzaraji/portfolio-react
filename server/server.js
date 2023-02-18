@@ -1,16 +1,31 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const PostsService = require("./service/PostsService");
+const dotenv = require("dotenv").config();
+const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const app = express();
 const db = require("./models");
+const userRoutes = require("./routes/userRoutes");
+
+const app = express();
 
 const bootServer = async () => {
-  app.use(cors());
   // server configuration
-  const PORT = 8080;
-  //parse in json all request having a body that come from client or go from server to client
+  const PORT = process.env.PORT || 8080;
+
+  //middleware
   app.use(bodyParser.json());
+  app.use(cors());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(cookieParser());
+
+  //synchronizing the database and forcing it to false so we dont lose data
+  // db.sequelize.sync({ force: true }).then(() => {
+  //   console.log("db has been re sync");
+  // });
+
+  //routes for the user API
+  app.use("/api/users", userRoutes);
 
   app.get("/api/posts", (req, res) => {
     db.Posts.findAll().then((posts) => {
