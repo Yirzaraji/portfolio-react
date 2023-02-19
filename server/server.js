@@ -1,11 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const PostsService = require("./service/PostsService");
 const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const db = require("./models");
 const userRoutes = require("./routes/userRoutes");
+const postRoutes = require("./routes/postRoutes");
 
 const app = express();
 
@@ -19,63 +18,16 @@ const bootServer = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());
 
-  //synchronizing the database and forcing it to false so we dont lose data
-  // db.sequelize.sync({ force: true }).then(() => {
-  //   console.log("db has been re sync");
-  // });
-
-  //routes for the user API
+  //api route
   app.use("/api/users", userRoutes);
+  app.use("/api", postRoutes);
 
-  app.get("/api/posts", (req, res) => {
-    db.Posts.findAll().then((posts) => {
-      res.send(posts);
-    });
-  });
-
-  //Read
-  app.get("/api/post/:id", async (req, res, next) => {
-    const { id } = req.params;
-    const post = await PostsService.readPost(id);
-    res.send(post);
-  });
-
-  //Create
-  app.post("/api/post/create", async (req, res, next) => {
-    await db.Posts.create(req.body);
-    res.sendStatus(201);
-  });
-
-  app.delete("/api/post/delete/:id", async (req, res, next) => {
-    const { id } = req.params;
-    await PostsService.deletePost(id);
-    res.sendStatus(200);
-  });
-
-  //update
-  app.patch("/api/post/update/:id", async (req, res, next) => {
-    try {
-      const { id } = req.params;
-      const formData = {};
-
-      //prevent empty inputs form data to be sent
-      for (const key in req.body) {
-        if (req.body[key]) {
-          formData[key] = req.body[key];
-        }
-      }
-
-      await PostsService.updatePost(formData, id);
-      res.sendStatus(200);
-    } catch (error) {
-      res.status(500).send(error.message);
-    }
-  });
-
+  //error
   app.use((req, res, next) => {
     res.sendStatus(404);
   });
 
+  //listening
   app.listen(PORT, () => {
     console.log(`Server is running on ${PORT}.`);
   });
