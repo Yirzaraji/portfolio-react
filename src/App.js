@@ -8,7 +8,7 @@ import PDFViewer from "./components/Common/PDFViewer/PDFViewer";
 import Post from "./components/Pages/Post/Post";
 import Create from "./components/Pages/Post/Form/Create";
 import Update from "./components/Pages/Post/Form/Update";
-import Providers from "stores/Providers";
+import Providers from "context/Providers";
 
 function App() {
   //render

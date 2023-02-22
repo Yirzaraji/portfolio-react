@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import TagsColor from "hooks/TagsColor";
+import useTagsColor from "hooks/TagsColor";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "api/axios";
 import "./Card.css";
+import SearchBar from "components/Forms/SearchBar";
 
 const Cards = () => {
-  const API_URL = process.env.REACT_APP_URL;
-  TagsColor();
+  useTagsColor();
 
   const [posts, setPosts] = useState([]);
   const [alteredPosts, setAlteredPosts] = useState([]);
   const fetchPosts = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/posts`);
+      const response = await axios.get(`api/posts`);
       setAlteredPosts(response.data);
       setPosts(response.data);
     } catch (error) {
@@ -29,7 +29,6 @@ const Cards = () => {
   const handleFilter = (event) => {
     const filteredPosts = posts.filter((post) => {
       const words = post.description.split(/\s+/);
-
       //work with just return words.includes(event.target.value);
       //but some() method allow to match with only few letters
       return words.some((word) => word.includes(event.target.value));
@@ -39,17 +38,7 @@ const Cards = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row justify-content-center">
-        <div className="col-md-3 text-center mb-5 mt-5">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search here"
-            name="searchbar"
-            onChange={handleFilter}
-          />
-        </div>
-      </div>
+      <SearchBar handleFilter={handleFilter} />
       <div className="box devBox active">
         <div className="row justify-content-center">
           {alteredPosts.map((post, index) => (

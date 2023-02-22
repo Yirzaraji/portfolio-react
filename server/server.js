@@ -14,7 +14,12 @@ const bootServer = async () => {
 
   //middleware
   app.use(bodyParser.json());
-  app.use(cors());
+  app.use(
+    cors({
+      origin: "http://localhost:3000", // replace with your frontend URL
+      credentials: true,
+    })
+  );
   app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());
 

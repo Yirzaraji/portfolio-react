@@ -1,23 +1,4 @@
-import React, { useState } from "react";
-
-const LoginForm = () => {
-  const [values, setValues] = useState({
-    email: "",
-    hash: "",
-  });
-
-  const handleChange = (event) => {
-    setValues({
-      ...values,
-      [values.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(values);
-  };
-
+const LoginForm = ({ handleSubmit, handleChange }) => {
   return (
     <div className="container">
       <div className="row">

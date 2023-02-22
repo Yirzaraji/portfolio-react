@@ -25,7 +25,11 @@ const signup = async (req, res) => {
         expiresIn: 1 * 24 * 60 * 60 * 1000,
       });
 
-      res.cookie("jwt", token, { maxAge: 1 * 24 * 60 * 60, httpOnly: true });
+      res.cookie("jwt", token, {
+        maxAge: 1 * 24 * 60 * 60,
+        httpOnly: true,
+        sameSite: "strict",
+      });
       console.log("user", JSON.stringify(user, null, 2));
       console.log(token);
       //send users details
@@ -41,7 +45,8 @@ const signup = async (req, res) => {
 //login authentication
 const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    console.log("body: " + { req });
+    const { email, hash } = req.body;
 
     //find a user by their email
     const user = await User.findOne({
@@ -52,8 +57,7 @@ const login = async (req, res) => {
 
     //if user email is found, compare password with bcrypt
     if (user) {
-      const isSame = await bcrypt.compare(password, user.password);
-
+      const isSame = await bcrypt.compare(hash, user.password);
       //if password is the same
       //generate token with the user's id and the secretKey in the env file
       if (isSame) {
@@ -64,9 +68,8 @@ const login = async (req, res) => {
         //if password matches go ahead and generate a cookie
         res.cookie("jwt", token, { maxAge: 1 * 24 * 60 * 60, httpOnly: true });
         console.log("user", JSON.stringify(user, null, 2));
-        console.log(token);
         //send user data
-        return res.status(201).send(user);
+        return res.status(201).json({ jwt: token, user: user });
       } else {
         return res.status(401).send("Authentication failed");
       }
