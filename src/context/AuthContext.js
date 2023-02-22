@@ -1,22 +1,22 @@
 import { createContext, useContext, useState } from "react";
 
 // create the user context
-const UserContext = createContext();
+const AuthContext = createContext();
 
 // create a custom hook to access the user context
 export const useUser = () => {
-  return useContext(UserContext);
+  return useContext(AuthContext);
 };
 
 // create a component that provides the user context
-export const UserProvider = (props) => {
-  const [user, setUser] = useState(null);
+export const AuthProvider = (props) => {
+  const [auth, setAuth] = useState(null);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ auth, setAuth }}>
       {props.children}
-    </UserContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
-export default UserContext;
+export default AuthContext;

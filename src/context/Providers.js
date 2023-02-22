@@ -1,11 +1,11 @@
 import React from "react";
-import { UserProvider } from "./UserContext";
+import { AuthProvider } from "./AuthContext";
 import { ThemeProvider } from "./ThemeContext";
 
 const Providers = ({ children }) => {
   return (
     <ThemeProvider>
-      <UserProvider>{children}</UserProvider>
+      <AuthProvider>{children}</AuthProvider>
     </ThemeProvider>
   );
 };
