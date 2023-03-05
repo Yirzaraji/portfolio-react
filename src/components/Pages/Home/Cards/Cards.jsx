@@ -7,7 +7,6 @@ import SearchBar from "components/Forms/SearchBar";
 
 const Cards = () => {
   useTagsColor();
-
   const [posts, setPosts] = useState([]);
   const [alteredPosts, setAlteredPosts] = useState([]);
   const fetchPosts = async () => {

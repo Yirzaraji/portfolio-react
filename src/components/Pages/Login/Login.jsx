@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import LoginForm from "components/Forms/LoginForm";
 import axios from "api/axios";
+import useAuth from "hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const navigate = useNavigate();
+  const { auth, setAuth } = useAuth();
   const [values, setValues] = useState({
     email: "",
     hash: "",
@@ -20,7 +25,15 @@ const Login = () => {
       const response = await axios.post("api/users/login", values, {
         withCredentials: true,
       });
-      console.log(response.data.jwt);
+      console.log(response.data);
+      const isAuthenticated = true;
+      const token = response.data.jwt;
+      const user = response.data.user.userName;
+      const userId = response.data.user.id;
+      const hash = response.data.user.password;
+      setAuth({ isAuthenticated, token, user, hash, userId });
+      console.log({ auth });
+      navigate("/");
     } catch (error) {
       console.error(error);
     }

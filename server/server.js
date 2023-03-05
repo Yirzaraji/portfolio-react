@@ -20,8 +20,8 @@ const bootServer = async () => {
       credentials: true,
     })
   );
-  app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());
+  app.use(express.urlencoded({ extended: true }));
 
   //api route
   app.use("/api/users", userRoutes);

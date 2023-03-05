@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import useAuth from "hooks/useAuth";
 
 function NavBar() {
+  const { auth } = useAuth();
   return (
     <nav>
       <div className="NavDesktop d-none d-sm-flex">
@@ -17,16 +19,19 @@ function NavBar() {
         <div className="navButton">
           <a href="#ankor_contact">CONTACT</a>
         </div>
-        <div className="navButton">
-          <Link to="/administration">
-            <i className="fas fa-users-cog"></i>
-          </Link>
-        </div>
-        <div className="navButton">
-          <Link to="/login">
-            <i className="fas fa-user-lock"></i>
-          </Link>
-        </div>
+        {auth?.isValid ? (
+          <div className="navButton">
+            <Link to="/administration">
+              <i className="fas fa-users-cog"></i>
+            </Link>
+          </div>
+        ) : (
+          <div className="navButton">
+            <Link to="/login">
+              <i className="fas fa-user-lock"></i>
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );

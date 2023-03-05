@@ -4,13 +4,15 @@ import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import Providers from "context/Providers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const API_URL = process.env.REACT_APP_URL;
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Providers>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Providers>
 );
 
 // If you want to start measuring performance in your app, pass a function

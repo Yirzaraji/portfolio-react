@@ -30,8 +30,8 @@ const signup = async (req, res) => {
         httpOnly: true,
         sameSite: "strict",
       });
-      console.log("user", JSON.stringify(user, null, 2));
-      console.log(token);
+
+      console.log("userzee", JSON.stringify(user, null, 2));
       //send users details
       return res.status(201).send(user);
     } else {
@@ -45,16 +45,13 @@ const signup = async (req, res) => {
 //login authentication
 const login = async (req, res) => {
   try {
-    console.log("body: " + { req });
     const { email, hash } = req.body;
-
     //find a user by their email
     const user = await User.findOne({
       where: {
         email: email,
       },
     });
-
     //if user email is found, compare password with bcrypt
     if (user) {
       const isSame = await bcrypt.compare(hash, user.password);
@@ -64,24 +61,28 @@ const login = async (req, res) => {
         let token = jwt.sign({ id: user.id }, process.env.secretKey, {
           expiresIn: 1 * 24 * 60 * 60 * 1000,
         });
-
         //if password matches go ahead and generate a cookie
-        res.cookie("jwt", token, { maxAge: 1 * 24 * 60 * 60, httpOnly: true });
-        console.log("user", JSON.stringify(user, null, 2));
+        res.cookie("jwt", token, {
+          maxAge: 1 * 24 * 60 * 60 * 1000,
+        });
+        //console.log("user", JSON.stringify(user, null, 2));
         //send user data
-        return res.status(201).json({ jwt: token, user: user });
+        return res.status(201).json({ user: user });
       } else {
-        return res.status(401).send("Authentication failed");
+        return res.status(401).send("Authentication failed: Wrong Password");
       }
     } else {
-      return res.status(401).send("Authentication failed");
+      return res.status(401).send("Authentication failed: Unknow user");
     }
   } catch (error) {
     console.log(error);
   }
 };
 
+const verifyToken = (req, res, next) => {};
+
 module.exports = {
   signup,
   login,
+  verifyToken,
 };

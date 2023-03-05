@@ -1,9 +1,8 @@
 //importing modules
 const express = require("express");
 const db = require("../models");
-//Assigning db.users to User variable
 const User = db.users;
-
+const jwt = require("jsonwebtoken");
 //Function to check if username or email already exist in the database
 const saveUser = async (req, res, next) => {
   //search the database to see if user exist
@@ -36,7 +35,31 @@ const saveUser = async (req, res, next) => {
   }
 };
 
-//exporting module
-module.exports = {
-  saveUser,
+const verifyToken = (req, res, next) => {
+  //cookie has been set in the login function
+  const token = req.cookies.jwt;
+  console.log("serverSideCookie: " + req.cookies.jwt);
+  if (!token) {
+    return res.status(401).send("Unauthorized: No token found in cookie");
+  }
+
+  jwt.verify(token, process.env.secretKey, async function (err, decoded) {
+    if (err) {
+      return res.status(401).send("Unauthorized: Invalid token");
+    }
+    const user = await User.findOne({
+      where: {
+        id: decoded.id,
+      },
+    });
+    const response = {
+      isValid: true,
+      user: user,
+    };
+    res.status(200).json(response);
+    //next();
+  });
 };
+
+//exporting module
+module.exports = { saveUser, verifyToken };
