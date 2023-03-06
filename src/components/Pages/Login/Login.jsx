@@ -28,10 +28,10 @@ const Login = () => {
       console.log(response.data);
       const isAuthenticated = true;
       const token = response.data.jwt;
-      const user = response.data.user.userName;
+      const userName = response.data.user.userName;
       const userId = response.data.user.id;
       const hash = response.data.user.password;
-      setAuth({ isAuthenticated, token, user, hash, userId });
+      setAuth({ isAuthenticated, token, userName, hash, userId });
       console.log({ auth });
       navigate("/");
     } catch (error) {

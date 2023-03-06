@@ -53,7 +53,8 @@ const verifyToken = (req, res, next) => {
       },
     });
     const response = {
-      isValid: true,
+      isAuthenticated: true,
+      token: req.cookies.jwt,
       user: user,
     };
     res.status(200).json(response);

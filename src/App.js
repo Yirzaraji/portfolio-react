@@ -22,14 +22,33 @@ function App() {
         <Route
           path="/administration"
           element={
-            <Protected isAuthenticated={auth?.isValid}>
-              <Administration />
+            <Protected isAuthenticated={auth?.isAuthenticated}>
+              <Administration user={auth} />
             </Protected>
           }
         />
-        <Route path="/administration/post/create" element={<Create />} />
-        <Route path="/administration/post/delete/:id" />
-        <Route path="/administration/post/update/:id" element={<Update />} />
+        <Route
+          path="/administration/post/create"
+          element={
+            <Protected isAuthenticated={auth?.isAuthenticated}>
+              <Create />
+            </Protected>
+          }
+        />
+        <Route
+          path="/administration/post/delete/:id"
+          element={
+            <Protected isAuthenticated={auth?.isAuthenticated}></Protected>
+          }
+        />
+        <Route
+          path="/administration/post/update/:id"
+          element={
+            <Protected isAuthenticated={auth?.isAuthenticated}>
+              <Update />
+            </Protected>
+          }
+        />
         <Route path="/post/:id" element={<Post />} />
         <Route
           path="/cv"

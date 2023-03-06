@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import NavbarAdmin from "components/Pages/Navbar/NavbarAdmin";
 import axios from "axios";
 import "./Administration.css";
-import useAuth from "hooks/useAuth";
 
-const Administration = () => {
-  const { auth } = useAuth();
-  console.log("authUserName: " + auth?.user.userName);
+const Administration = (props) => {
+  //console.log(user.userName);
 
   const [posts, setPosts] = useState([]);
   let API_URL = process.env.REACT_APP_URL;
@@ -46,7 +44,7 @@ const Administration = () => {
             <div className="row">
               <div className="col-md-12 mt-2 pb-2 ml-2 line-bottom">
                 <span className="mb-3 mt-4 pb-2 UserAdmin">
-                  Bienvenue, <b>{auth?.user.userName}</b>
+                  Bienvenue, <b>{props.user.userName}</b>
                 </span>
                 <br />
               </div>

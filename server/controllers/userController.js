@@ -26,9 +26,10 @@ const signup = async (req, res) => {
       });
 
       res.cookie("jwt", token, {
-        maxAge: 1 * 24 * 60 * 60,
+        maxAge: 1 * 24 * 60 * 60, //millisecond
         httpOnly: true,
         sameSite: "strict",
+        secure: true,
       });
 
       console.log("userzee", JSON.stringify(user, null, 2));
@@ -64,6 +65,9 @@ const login = async (req, res) => {
         //if password matches go ahead and generate a cookie
         res.cookie("jwt", token, {
           maxAge: 1 * 24 * 60 * 60 * 1000,
+          httpOnly: true,
+          secure: true,
+          sameSite: "strict",
         });
         //console.log("user", JSON.stringify(user, null, 2));
         //send user data
@@ -79,10 +83,13 @@ const login = async (req, res) => {
   }
 };
 
-const verifyToken = (req, res, next) => {};
+const loggout = (req, res) => {
+  res.clearCookie("jwt", { httpOnly: true, secure: true, sameSite: "strict" });
+  res.send("Cookie deleted");
+};
 
 module.exports = {
   signup,
   login,
-  verifyToken,
+  loggout,
 };

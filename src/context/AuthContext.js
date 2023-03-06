@@ -6,8 +6,8 @@ const AuthContext = createContext();
 
 // create a component that provides the user context
 export const AuthProvider = (props) => {
-  const [auth, setAuth] = useState(null);
-
+  const [auth, setAuth] = useState();
+  console.log(auth);
   useEffect(() => {
     //const jwt = document.cookie.split("=");
     //console.log("jwt: " + jwt[1]);
@@ -20,7 +20,7 @@ export const AuthProvider = (props) => {
             withCredentials: true,
           }
         );
-        console.log("TokenIsValid: " + response.data.isValid);
+        //console.log("TokenIsValid: " + response.data.isValid);
         setAuth(response.data);
       } catch (error) {
         console.error(error);
