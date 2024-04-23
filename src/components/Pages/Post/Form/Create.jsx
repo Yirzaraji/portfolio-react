@@ -14,7 +14,7 @@ function Create() {
     image: "",
     category: "",
     demo: "",
-    tags: "tag",
+    tags: [],
     git: "",
     images: [],
   });

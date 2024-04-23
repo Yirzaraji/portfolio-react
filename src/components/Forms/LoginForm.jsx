@@ -6,7 +6,7 @@ const LoginForm = ({ handleSubmit, handleChange }) => {
         <div className="col-md-6">
           <div className="bg-light py-3 px-3 mt-5 mb-5">
             <h1 className="titleColor">
-              <i className="fas fa-sign-in-alt"></i> Connection
+              <i className="fas fa-sign-in-alt"></i> Admin Only
             </h1>
             <form onSubmit={handleSubmit}>
               <div className="form-group">

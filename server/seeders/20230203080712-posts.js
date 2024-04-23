@@ -32,9 +32,11 @@ module.exports = {
       const data = [
         {
           title: "Front end react",
-          description: "qdzqqdzqd",
+          description:
+            "Stars Wars Battle est un mini jeu de combat au tour par tour. Le principe est simple, le joueur sélectionne deux cartes et les faits s'affronter en déclenchant le combat.",
           image: `https://picsum.photos/390/340?random=${random}`,
-          paragraph: "zqdloremqdqdipsum",
+          paragraph:
+            "Ce projet a été realisé au niveau du back end en php orienté objet ainsi j'ai pu créer une classe personnage permettant d'attribuer des statistiques et des pouvoirs différents a chaque personnage (ou carte). Certains comme le vénérable maître Yoda ont moins de puissance d'attaque mais bénéficie d'un sort de force lui permettant de regagner ses points de vie. Coté Front end l'interactivité de l'interface graphique est gérée en Javascript de plus a la fin du combat, le déroulé de celui ci est enregistré en base de donnée avec une requête Ajax.",
           category: categories[rand],
           demo: "http://blabla.fr",
           tags: [tags[randTag], tags[randTag2], tags[randTag3]],

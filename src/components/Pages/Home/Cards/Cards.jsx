@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import useTagsColor from "hooks/TagsColor";
 import { Link } from "react-router-dom";
 import axios from "api/axios";
@@ -9,6 +9,8 @@ const Cards = () => {
   useTagsColor();
   const [posts, setPosts] = useState([]);
   const [alteredPosts, setAlteredPosts] = useState([]);
+  const spanref = useRef();
+
   const fetchPosts = async () => {
     try {
       const response = await axios.get(`api/posts`);
@@ -35,6 +37,10 @@ const Cards = () => {
     setAlteredPosts(filteredPosts);
   };
 
+  useEffect(() => {
+    console.log(spanref);
+  }, [alteredPosts]);
+
   return (
     <div className="container-fluid">
       <SearchBar handleFilter={handleFilter} />
@@ -55,7 +61,7 @@ const Cards = () => {
                     <span className="techTxt">Technologies</span>
                     <p className="mt-1">
                       {post.tags.map((tag, index) => (
-                        <span key={index} className="tagsCards">
+                        <span ref={spanref} key={index} className="tagsCards">
                           {tag}
                         </span>
                       ))}

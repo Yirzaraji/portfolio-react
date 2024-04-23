@@ -17,6 +17,7 @@ const signup = async (req, res) => {
     };
     //saving the user
     const user = await User.create(data);
+    console.log(process.env);
 
     //generate token with the user's id and the secretKey in the env file
     // set cookie with the token generated
@@ -32,7 +33,7 @@ const signup = async (req, res) => {
         secure: true,
       });
 
-      console.log("userzee", JSON.stringify(user, null, 2));
+      //console.log("userzee", JSON.stringify(user, null, 2));
       //send users details
       return res.status(201).send(user);
     } else {

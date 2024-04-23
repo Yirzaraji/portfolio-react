@@ -1,7 +1,5 @@
 "use strict";
 
-const { sequelize } = require("../models");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -17,7 +15,7 @@ module.exports = {
         allowNull: true,
       },
       description: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: true,
       },
       image: {
@@ -25,7 +23,7 @@ module.exports = {
         allowNull: true,
       },
       paragraph: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       category: {
         type: Sequelize.STRING,
@@ -59,6 +57,7 @@ module.exports = {
       },
     });
   },
+
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("Posts");
   },

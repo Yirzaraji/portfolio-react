@@ -109,7 +109,7 @@
 }
 
 /*############ Caroussel ############*/
-.carousel-inner {
+/* .carousel-inner {
   border-radius: 14px;
 }
 
@@ -138,4 +138,44 @@ div.carousel-caption {
   background-color: #949494;
   text-transform: uppercase;
   color: wheat;
+}
+ */
+
+.carousel-container {
+  position: relative;
+  max-width: 1450px; /* ou toute autre valeur de votre choix */
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.carousel-btn-left {
+  left: 10px;
+}
+
+.carousel-btn-right {
+  right: 10px;
+}
+
+.carousel-arrow-left,
+.carousel-arrow-right {
+  font-size: 5rem;
+  color: #ffffff; /* couleur des flèches */
+}
+
+.img-carou {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 0px 20px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 0px 20px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 0px 20px -9px rgba(0, 0, 0, 0.75);
 }

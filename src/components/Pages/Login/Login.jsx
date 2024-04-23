@@ -15,6 +15,7 @@ const Login = () => {
   const handleChange = (event) => {
     setValues({
       ...values,
+      //field: value
       [event.target.name]: event.target.value,
     });
   };
@@ -39,7 +40,6 @@ const Login = () => {
     }
   };
 
-  //Jsx render
   return <LoginForm handleSubmit={handleSubmit} handleChange={handleChange} />;
 };
 

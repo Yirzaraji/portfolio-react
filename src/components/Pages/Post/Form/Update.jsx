@@ -16,7 +16,7 @@ function Update() {
     image: "",
     category: "",
     demo: "",
-    tags: "",
+    tags: [],
     git: "",
     images: [],
   });
@@ -64,10 +64,16 @@ function Update() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // Convert tags to array if it's not already
+    const updatedFormData = {
+      ...formData,
+      tags: Array.isArray(formData.tags) ? formData.tags : [formData.tags],
+    };
+    console.log(updatedFormData);
     try {
       const response = await axios.patch(
         `http://localhost:8080/api/post/update/${id}`,
-        formData
+        updatedFormData
       );
       console.log(response);
       navigate("/administration");

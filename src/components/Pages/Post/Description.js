@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import TagsColor from "hooks/TagsColor";
 
 const Description = (post) => {
   //Hook the logic to colorise tags
   TagsColor();
+  const spanref = useRef();
   return (
     <div className="container-fluid mx-0 mb-5">
       <div className="row mt-5 mb-5 justify-content-center">
@@ -11,7 +12,7 @@ const Description = (post) => {
           <div
             className="img-fluid imgPost"
             style={{
-              backgroundImage: `url('${post.value.image}')`,
+              backgroundImage: `url('../${post.value.image}')`,
               backgroundRepeat: "no-repeat",
               height: "100%",
               width: "100%",
@@ -51,23 +52,21 @@ const Description = (post) => {
               >
                 <i className="fas fa-laptop-code"></i> DEMO LIVE
               </a>
-              {/* {% endif %} */}
             </div>
           </div>
           <div className="row">
             <div className="col-12 text-left tagsBloc">
-              <span>
-                {/* {% if post.date is not null %} */}
-                Mofifié le : {post.value.createdAt}
-              </span>
-              {/* {% else %} */}
-
-              {/* {% endif %} */}
+              <span>Mofifié le : {post.value.createdAt}</span>
             </div>
             <div className="col-12 tagsBloc">
-              Tags :{/* {% for tag in post.tags %} */}
-              <span className="tagsPost">{post.value.tags}</span>
-              {/* {% endfor %} */}
+              {console.log(post.value.tags)}
+
+              {post.value.tags &&
+                post.value.tags.map((tag, index) => (
+                  <span ref={spanref} key={index} className="tagsCards">
+                    {tag}
+                  </span>
+                ))}
             </div>
           </div>
         </div>
