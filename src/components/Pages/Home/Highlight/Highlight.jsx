@@ -3,9 +3,10 @@ import "./Highlight.css";
 const Highlight = ({ posts, Link, spanref }) => {
   return (
     <div className="row">
-      <div className="col-md-12 highLightBlock">
-        <h4 className="text-center pt-5">
-          <b>Highlight Project(s)</b>
+      <div className="col-md-12 pt-5 text-center highLightBlock">
+        <img src="images/rosace-title.png" alt="" className="mb-2" />
+        <h4 className="text-center color titleColor">
+          <b>HIGHLIGHT</b> PROJECT(S)
         </h4>
         <div className="box devBox active">
           <div className="row pb-5 pt-5 justify-content-center">
