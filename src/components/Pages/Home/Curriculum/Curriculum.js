@@ -76,6 +76,27 @@ const Curriculum = () => (
       <div className="col-md-6 line_leftBlack mt-5 mb-5">
         <p>
           <b>
+            Online course React & Javascript
+            <br />
+            <span className="gradientPurpleFont">UDEMY</span>
+          </b>
+          <br />
+          2022 - 2024
+        </p>
+
+        <p>
+          En tant qu'autodidacte, j'ai enrichi mes compétences grâce à des
+          formations en ligne, principalement sur des plateformes telles que
+          Udemy. Ces cours m'ont permis de plonger dans l'univers de React, en
+          assimilant ses fondamentaux et en explorant des fonctionnalités
+          avancées. J'ai également approfondi mes connaissances en développant
+          des API basiques avec Node.js, où j'ai pu mettre en pratique des
+          opérations CRUD et mettre en place une authentification sécurisée
+          basée sur des tokens JWT.
+        </p>
+        <div className="mt-2"></div>
+        <p>
+          <b>
             DEVELOPPEUR WEB Bac +2
             <br />
             <span className="gradientPurpleFont">SIMPLON.CO</span>
