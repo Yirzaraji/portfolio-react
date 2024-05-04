@@ -56,34 +56,36 @@ const Cards = () => {
   return (
     <div className="container-fluid">
       <Highlight posts={posts} Link={Link} spanref={spanref} />
-      <SearchBar handleFilter={handleFilter} />
       <div className="box devBox active">
-        <div className="row justify-content-center">
-          {alteredPosts.map((post, index) => (
-            <Link key={index} to={`/post/${post.id}`}>
-              <div className="newsCard news-Slide-up m-1">
-                <img alt="" src={post.image} />
-                <div className="newsCaption text-left">
-                  <div className="newsCaption-title">project</div>
-                  <span className="projectTitle">{post.title}</span>
-                  <div className="dottedLine mb-3 mt-1"></div>
-                  <span className="techTxt">Description</span>
-                  <p>{post.description}</p>
-                  <div className="mb-5 mt-1"></div>
-                  <div className="newsCaption-content col-12">
-                    <span className="techTxt">Technologies</span>
-                    <p className="mt-1">
-                      {post.tags.map((tag, index) => (
-                        <span ref={spanref} key={index} className="tagsCards">
-                          {tag}
-                        </span>
-                      ))}
-                    </p>
+        <SearchBar handleFilter={handleFilter} />
+        <div className="row">
+          <div className="col-md-12 d-flex flex-wrap justify-content-center">
+            {alteredPosts.map((post, index) => (
+              <Link key={index} to={`/post/${post.id}`}>
+                <div className="newsCard news-Slide-up m-1">
+                  <img alt="" src={post.image} />
+                  <div className="newsCaption text-left">
+                    <div className="newsCaption-title">project</div>
+                    <span className="projectTitle">{post.title}</span>
+                    <div className="dottedLine mb-3 mt-1"></div>
+                    <span className="techTxt">Description</span>
+                    <p>{post.description}</p>
+                    <div className="mb-5 mt-1"></div>
+                    <div className="newsCaption-content col-12">
+                      <span className="techTxt">Technologies</span>
+                      <p className="mt-1">
+                        {post.tags.map((tag, index) => (
+                          <span ref={spanref} key={index} className="tagsCards">
+                            {tag}
+                          </span>
+                        ))}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>
