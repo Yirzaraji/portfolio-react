@@ -1,0 +1,6 @@
+.highLightBlock {
+  background: #efefef;
+  -webkit-box-shadow: inset 2px 1px 13px -3px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: inset 2px 1px 13px -3px rgba(0, 0, 0, 0.51);
+  box-shadow: inset 2px 1px 13px -3px rgba(0, 0, 0, 0.51);
+}

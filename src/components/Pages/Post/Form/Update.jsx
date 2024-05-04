@@ -67,7 +67,9 @@ function Update() {
     // Convert tags to array if it's not already
     const updatedFormData = {
       ...formData,
-      tags: Array.isArray(formData.tags) ? formData.tags : [formData.tags],
+      tags: Array.isArray(formData.tags)
+        ? formData.tags
+        : formData.tags.split(","),
     };
     console.log(updatedFormData);
     try {

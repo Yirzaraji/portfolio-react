@@ -1,0 +1,5 @@
+.bg-searchbar {
+  -webkit-box-shadow: -1px 10px 13px -14px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: -1px 10px 13px -14px rgba(0, 0, 0, 0.47);
+  box-shadow: -1px 10px 13px -14px rgba(0, 0, 0, 0.47);
+}

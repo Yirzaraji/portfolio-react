@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "api/axios";
 import "./Card.css";
 import SearchBar from "components/Forms/SearchBar";
+import Highlight from "../Highlight/Highlight";
 
 const Cards = () => {
   useTagsColor();
@@ -43,6 +44,7 @@ const Cards = () => {
 
   return (
     <div className="container-fluid">
+      <Highlight posts={posts} Link={Link} spanref={spanref} />
       <SearchBar handleFilter={handleFilter} />
       <div className="box devBox active">
         <div className="row justify-content-center">
