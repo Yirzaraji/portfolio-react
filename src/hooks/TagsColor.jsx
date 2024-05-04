@@ -6,8 +6,8 @@ const TagsColor = () => {
     sql: "#ff8f00",
     php: "#004480",
     symfony: "#4242c8",
-    js: "rgb(255, 241, 42)",
-    javascript: "rgb(255, 241, 42)",
+    js: "rgb(237, 202, 14)",
+    javascript: "rgb(237, 202, 14)",
     photoshop: "rgb(0, 112, 255)",
     ps: "rgb(0, 112, 255)",
     indesign: "rgb(255, 0, 72)",
@@ -26,9 +26,9 @@ const TagsColor = () => {
     "c#": "#690081",
     unity: "#002835",
     api: "#4a7ebd",
-    seo: "#fff",
+    seo: "#262626",
     wordpress: "#28799e",
-    cms: "#fff",
+    cms: "#262626",
   });
 
   useEffect(() => {
