@@ -78,7 +78,7 @@ const Curriculum = () => (
           <b>
             Online course React & Javascript
             <br />
-            <span className="gradientPurpleFont">UDEMY</span>
+            <span className="gradientPurpleFont">UDEMY & OpenClassRoom</span>
           </b>
           <br />
           2022 - 2024
