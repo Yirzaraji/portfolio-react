@@ -5,6 +5,17 @@ const Description = (post) => {
   //Hook the logic to colorise tags
   TagsColor();
   const spanref = useRef();
+
+  // Function to format date
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  }
+
   return (
     <div className="container-fluid mx-0 mb-5">
       <div className="row mt-5 mb-5 justify-content-center">
@@ -32,7 +43,7 @@ const Description = (post) => {
               </div>
             </div>
             <div className="col-md-9 line_leftBlack mt-4 mb-5 text-justify contentPost">
-              {post.value.description} | raw
+              {post.value.description}
               <br />
               <br />
               {/* {% if post.git is not null %} */}
@@ -56,7 +67,7 @@ const Description = (post) => {
           </div>
           <div className="row">
             <div className="col-12 text-left tagsBloc">
-              <span>Mofifié le : {post.value.createdAt}</span>
+              <span>Mofifié le : {formatDate(post.value.createdAt)}</span>
             </div>
             <div className="col-12 tagsBloc">
               {console.log(post.value.tags)}

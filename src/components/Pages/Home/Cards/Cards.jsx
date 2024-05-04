@@ -31,17 +31,20 @@ const Cards = () => {
   const handleFilter = (event) => {
     const filteredPosts = posts.filter((post) => {
       const words = post.paragraph
+        .toLowerCase()
         .split(/\s+/)
         .concat(
           post.tags,
           post.category,
-          post.description.split(/\s+/),
+          post.description.toLowerCase().split(/\s+/),
           post.title.split(/\s+/)
         );
       console.log(post.paragraph);
       //work with just return words.includes(event.target.value);
       //but some() method allow to match with only few letters
-      return words.some((word) => word.includes(event.target.value));
+      return words.some((word) =>
+        word.includes(event.target.value.toLowerCase())
+      );
     });
     setAlteredPosts(filteredPosts);
   };
