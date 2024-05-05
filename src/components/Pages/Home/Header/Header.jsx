@@ -1,6 +1,8 @@
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <div className="container-fluid banner">
       <div className="row text-center">
@@ -20,15 +22,14 @@ function Header() {
             <br />
             <span>06.29.61.53.66</span>
           </p>
-          <button className="btn mt-3 mb-5 cv_icon">
-            <a href="cv">
-              {" "}
+          <Link to="/cv">
+            <button className="btn mt-3 mb-5 cv_icon">
               <i className="fas fa-download">
                 <br />
                 <p className="mt-3">cv</p>
               </i>
-            </a>
-          </button>
+            </button>
+          </Link>
           <br />
           <div className="row justify-content-center">
             <div className="col-md-12 bandeauContact">

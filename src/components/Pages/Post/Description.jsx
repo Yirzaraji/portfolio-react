@@ -5,6 +5,9 @@ const Description = (post) => {
   //Hook the logic to colorise tags
   TagsColor();
   const spanref = useRef();
+  if (post.value.demo) {
+    console.log(post.value.demo.length);
+  }
 
   // Function to format date
   function formatDate(dateString) {
@@ -49,20 +52,24 @@ const Description = (post) => {
               {/* {% if post.git is not null %} */}
               <br />
               <br />
-              <a
-                className="font-weight-bold"
-                href={post.value.git}
-                target="_blank"
-              >
-                <i className="fab fa-github-alt"></i> REPO GIT
-              </a>
-              <a
-                className="font-weight-bold"
-                href={post.value.demo}
-                target="_blank"
-              >
-                <i className="fas fa-laptop-code"></i> DEMO LIVE
-              </a>
+              {post.value.git ? (
+                <a
+                  className="font-weight-bold"
+                  href={post.value.git}
+                  target="_blank"
+                >
+                  <i className="fab fa-github-alt"></i> REPO GIT
+                </a>
+              ) : null}
+              {post.value.demo ? (
+                <a
+                  className="font-weight-bold"
+                  href={post.value.demo}
+                  target="_blank"
+                >
+                  <i className="fas fa-laptop-code"></i> DEMO LIVE
+                </a>
+              ) : null}
             </div>
           </div>
           <div className="row">
@@ -70,8 +77,6 @@ const Description = (post) => {
               <span>Modifié: {formatDate(post.value.createdAt)}</span>
             </div>
             <div className="col-12 tagsBloc">
-              {console.log(post.value.tags)}
-
               {post.value.tags &&
                 post.value.tags.map((tag, index) => (
                   <span ref={spanref} key={index} className="tagsCards">
