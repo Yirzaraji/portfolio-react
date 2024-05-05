@@ -26,14 +26,14 @@ const Login = () => {
       const response = await axios.post("api/users/login", values, {
         withCredentials: true,
       });
-      console.log(response.data);
+      //console.log(response.data);
       const isAuthenticated = true;
       const token = response.data.jwt;
       const userName = response.data.user.userName;
       const userId = response.data.user.id;
       const hash = response.data.user.password;
       setAuth({ isAuthenticated, token, userName, hash, userId });
-      console.log({ auth });
+      //console.log({ auth });
       navigate("/");
     } catch (error) {
       console.error(error);

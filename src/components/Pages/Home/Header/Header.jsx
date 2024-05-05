@@ -14,7 +14,7 @@ function Header() {
           />
           <p>DEVELOPPEUR</p>
           <p>
-            <span className="text-warning">&#60;React.JS</span> créatif{" "}
+            <span className="text-warning">&#60;React.JS</span> créatif
             <span className="text-warning">{"/>"}</span>
           </p>
           <p>

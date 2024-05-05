@@ -7,7 +7,7 @@ import axios from "api/axios";
 function NavBar() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
-  console.log(auth);
+  //console.log(auth);
 
   const handleClick = async (event) => {
     event.preventDefault();
