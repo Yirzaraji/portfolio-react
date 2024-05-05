@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "api/axios";
 import Submit from "./Submit";
 import { useNavigate } from "react-router-dom";
 
@@ -48,10 +48,7 @@ function Create() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/post/create",
-        formData
-      );
+      const response = await axios.post("/api/post/create", formData);
       console.log(response);
       navigate("/administration");
     } catch (error) {

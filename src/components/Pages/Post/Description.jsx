@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
 import TagsColor from "hooks/TagsColor";
 
 const Description = (post) => {
@@ -31,7 +31,7 @@ const Description = (post) => {
             alt="Responsive image"
           ></div>
         </div>
-        <div className="col-sm-10 col-md-7 col-lg-7 col-xl-6 bg-white PostDescription border">
+        <div className="col-sm-10 col-md-7 col-lg-7 col-xl-6 PostDescription">
           <div className="row justify-content-center">
             <div className="col-md-12 d-flex justify-content-between postTitle">
               <div className="project-title ml-5">
@@ -67,7 +67,7 @@ const Description = (post) => {
           </div>
           <div className="row">
             <div className="col-12 text-left tagsBloc">
-              <span>Mofifié le : {formatDate(post.value.createdAt)}</span>
+              <span>Modifié: {formatDate(post.value.createdAt)}</span>
             </div>
             <div className="col-12 tagsBloc">
               {console.log(post.value.tags)}

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "api/axios";
 
 const useGetPost = () => {
   const [post, setPost] = useState([]);
 
   //catch the id param of the url when the function useGetPost in called inside the component
   const getId = window.location.pathname.split("/").pop();
-  const API_URL = process.env.REACT_APP_URL + "/api/post/" + getId;
+  const API_URL = "/api/post/" + getId;
 
   useEffect(() => {
     const data = async () => {

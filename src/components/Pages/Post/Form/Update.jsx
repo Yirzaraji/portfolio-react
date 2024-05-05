@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "api/axios";
 import Submit from "./Submit";
 
 function Update() {
@@ -25,9 +25,7 @@ function Update() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8080/api/post/${id}`
-        );
+        const response = await axios.get(`/api/post/${id}`);
         setFormData(response.data);
       } catch (error) {
         console.error(error);
@@ -74,7 +72,7 @@ function Update() {
     console.log(updatedFormData);
     try {
       const response = await axios.patch(
-        `http://localhost:8080/api/post/update/${id}`,
+        `/api/post/update/${id}`,
         updatedFormData
       );
       console.log(response);

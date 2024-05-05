@@ -10,47 +10,49 @@ const Highlight = ({ posts, Link, spanref }) => {
         </h4>
         <div className="box devBox active">
           <div className="row pb-5 pt-5 justify-content-center">
-            <Link key={6} to={`/post/${6}`}>
+            <Link key={6} to={`/post/${26}`}>
               <div className="newsCard news-Slide-up m-1">
-                <img alt="" src="https://picsum.photos/390/340?random=0" />
+                <img alt="" src="images/portfolio-thumb.jpg" />
                 <div className="newsCaption text-left">
                   <div className="newsCaption-title">project</div>
-                  <span className="projectTitle">Front end react m</span>
+                  <span className="projectTitle">
+                    Portfolio : Symfony to React
+                  </span>
                   <div className="dottedLine mb-3 mt-1"></div>
                   <span className="techTxt">Description</span>
                   <p>
-                    Stars Wars Battle est un mini jeu de combat au tour par
-                    tour. Le principe est simple, le joueur sélectionne deux
-                    cartes et les faits s'affronter en déclenchant le combat.
+                    Mon portfolio est le fruit de mon parcours de formation et
+                    de ma passion pour le développement web
                   </p>
                   <div className="mb-5 mt-1"></div>
                   <div className="newsCaption-content col-12">
                     <span className="techTxt">Technologies</span>
                     <p className="mt-1">
                       <span className="tagsCards">php</span>
+                      <span className="tagsCards">api</span>
+                      <span className="tagsCards">sql</span>
+                      <span className="tagsCards">react</span>
+                      <span className="tagsCards">node</span>
                     </p>
                   </div>
                 </div>
               </div>
             </Link>
-            <Link key={5} to={`/post/${5}`}>
+            <Link key={5} to={`/post/${25}`}>
               <div className="newsCard news-Slide-up m-1">
-                <img alt="" src="https://picsum.photos/390/340?random=0" />
+                <img alt="" src="images/weatherCover.jpg" />
                 <div className="newsCaption text-left">
                   <div className="newsCaption-title">project</div>
-                  <span className="projectTitle">Front end react m</span>
+                  <span className="projectTitle">Weather API</span>
                   <div className="dottedLine mb-3 mt-1"></div>
                   <span className="techTxt">Description</span>
-                  <p>
-                    Stars Wars Battle est un mini jeu de combat au tour par
-                    tour. Le principe est simple, le joueur sélectionne deux
-                    cartes et les faits s'affronter en déclenchant le combat.
-                  </p>
+                  <p>Web app simple de meteo utilisant l'api Open weather.</p>
                   <div className="mb-5 mt-1"></div>
                   <div className="newsCaption-content col-12">
                     <span className="techTxt">Technologies</span>
                     <p className="mt-1">
-                      <span className="tagsCards">sql</span>
+                      <span className="tagsCards">js</span>
+                      <span className="tagsCards">api</span>
                     </p>
                   </div>
                 </div>

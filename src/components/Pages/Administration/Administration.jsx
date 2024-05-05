@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavbarAdmin from "components/Pages/Navbar/NavbarAdmin";
-import axios from "axios";
+import axios from "api/axios";
 import "./Administration.css";
 
 const Administration = (props) => {
   //console.log(user.userName);
 
   const [posts, setPosts] = useState([]);
-  let API_URL = process.env.REACT_APP_URL;
 
   useEffect(() => {
     const data = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/posts`);
+        const response = await axios.get(`/api/posts`);
         setPosts(response.data);
       } catch (error) {
         console.error(error);
@@ -26,7 +25,7 @@ const Administration = (props) => {
   //ID value is passed onclick from the deleted button
   const handleClick = async (id, event) => {
     event.preventDefault();
-    let API_URL = process.env.REACT_APP_URL + "/api/post/delete/" + id;
+    let API_URL = "/api/post/delete/" + id;
     try {
       await axios.delete(API_URL);
       setPosts(posts.filter((post) => post.id !== id));
