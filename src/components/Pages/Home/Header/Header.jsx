@@ -33,15 +33,15 @@ function Header() {
           <br />
           <div className="row justify-content-center">
             <div className="col-md-12 bandeauContact">
-              <a href="https://www.linkedin.com/in/rl-dev/">
+              <Link to="https://www.linkedin.com/in/rl-dev/">
                 <img src="images/logo_linkedin.png" alt="" />
-              </a>
-              <a href="#ankor_contact">
+              </Link>
+              <Link to="#ankor_contact">
                 <img src="images/logo_contact.png" alt="" />
-              </a>
-              <a href="https://github.com/Yirzaraji">
+              </Link>
+              <Link to="https://github.com/Yirzaraji">
                 <img src="images/logo_git.png" alt="" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

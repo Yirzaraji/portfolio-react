@@ -15,12 +15,13 @@ const Services = () => (
       <div className="col-sm-4 col-md-3 tripleCard">
         <img src="images/logo_print.png" alt="" className="mb-4" />
         <br />
-        <span className="triplecard_txt">PRINT</span>
+        <span className="triplecard_txt">CMS</span>
         <br />
         <p className="mt-1">
-          Que ce soit des flyers, des logos, des brochures,
+          Site vitrine ? Ecommerce ?
           <br />
-          Je peux mener a bien votre commmunication imprimée
+          Profitez d'une solution clé en main tres rapidement afin de valoriser
+          votre activité.
         </p>
       </div>
       <div className="col-sm-4 col-md-3 tripleCard">
@@ -29,9 +30,8 @@ const Services = () => (
         <span className="triplecard_txt">DEV</span>
         <br />
         <p className="mt-1">
-          Un projet web, une fonctionnalité a developper,
-          <br />
-          J'ai de large competence dans le domaine du web
+          Un projet web, une fonctionnalité a developper ? Mes compétences
+          pemettront surement de repondre à vos attentes.
         </p>
       </div>
       <div className="col-sm-4 col-md-3 tripleCard">
@@ -40,9 +40,10 @@ const Services = () => (
         <span className="triplecard_txt">DESIGN</span>
         <br />
         <p className="mt-1">
-          Design numerique, communication visuelle
+          Design numerique, communication visuelle.
           <br />
-          Je suis en capacité de creer des mockup pour vos projets web
+          Je suis en capacité de creer l'identité visuelle de votre produit ou
+          votre entreprise.
         </p>
       </div>
     </div>
