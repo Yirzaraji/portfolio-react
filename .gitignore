@@ -15,7 +15,7 @@
 .env
 
 # Netlify config
-_redirects
+public/_redirects
 
 # misc
 .DS_Store

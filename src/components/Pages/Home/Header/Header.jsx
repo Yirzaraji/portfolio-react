@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className="container-fluid banner">
       <div className="row text-center">
-        <div className="col-sm-5 col-md-5 blockBanner01 pb-3">
+        <div className="col-sm-8 col-md-5 col-lg-5 col-xl-5 blockBanner01 pb-3">
           <img
             src="images/logoround.png"
             alt="banner"
@@ -18,7 +18,7 @@ function Header() {
             <span className="text-warning">{"/>"}</span>
           </p>
           <p>
-            <span>Remi Delarue</span>
+            <span>Remi Larrauri</span>
             <br />
             <span>06.29.61.53.66</span>
           </p>
@@ -45,7 +45,7 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="col-sm-7 col-md-7 bannerLowpolyImg"></div>
+        <div className="col-sm-4 col-md-7 col-lg-7 col-xl-7 bannerLowpolyImg"></div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const Highlight = ({ posts, Link, spanref }) => {
                     de ma passion pour le développement web
                   </p>
                   <div className="mb-5 mt-1"></div>
-                  <div className="newsCaption-content col-12">
+                  <div className="newsCaption-content d-none d-sm-block col-12">
                     <span className="techTxt">Technologies</span>
                     <p className="mt-1">
                       <span className="tagsCards">php</span>
@@ -48,7 +48,7 @@ const Highlight = ({ posts, Link, spanref }) => {
                   <span className="techTxt">Description</span>
                   <p>Web app simple de meteo utilisant l'api Open weather.</p>
                   <div className="mb-5 mt-1"></div>
-                  <div className="newsCaption-content col-12">
+                  <div className="newsCaption-content d-none d-sm-block col-12">
                     <span className="techTxt">Technologies</span>
                     <p className="mt-1">
                       <span className="tagsCards">js</span>

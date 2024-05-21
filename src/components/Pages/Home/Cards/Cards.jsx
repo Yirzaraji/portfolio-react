@@ -71,7 +71,7 @@ const Cards = () => {
                     <span className="techTxt">Description</span>
                     <p>{post.description}</p>
                     <div className="mb-5 mt-1"></div>
-                    <div className="newsCaption-content col-12">
+                    <div className="newsCaption-content d-none d-sm-block col-12">
                       <span className="techTxt">Technologies</span>
                       <p className="mt-1">
                         {post.tags.map((tag, index) => (

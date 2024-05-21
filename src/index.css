@@ -49,64 +49,17 @@ code {
     display: none;
   }
 
-  #mobile-burger {
-    display: block;
-    position: fixed;
-    z-index: 996;
+  .bandeauContact img {
+    width: 50px;
   }
 
-  li {
-    list-style: none;
-  }
-
-  .navbar-mobile li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 1.3rem;
-    line-height: 59px;
-    transition: 0.4s;
-  }
-
-  .navbar-mobile li a:hover {
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #6016b4;
-    border-radius: 15px;
-    transition: 0.4s;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-
-  .navbar-mobile {
-    background-color: #1e1e1e;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 345px;
-    overflow: hidden;
-    color: #402bfd;
-    /* hide the menu above the screen by default */
-    transform: translateY(-100%);
-    /* transition adds a little animation when sliding in and out the menu */
-    transition: transform 0.2s ease;
-    z-index: 998;
-  }
-
-  .showNav {
-    /* show the menu */
-    transform: translateY(0);
+  .blockBanner01 p:nth-child(3) {
+    font-size: 2rem !important;
   }
 
   .newsCard {
-    width: 309px;
-    height: 257px;
-  }
-
-  .list_js li a {
-    font-size: 1rem !important;
+    width: 360px;
+    height: 287px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -119,7 +72,7 @@ code {
     height: 257px;
   }
 
-  .newsCaption-content {
-    display: none;
+  .blockBanner01 p:nth-child(3) {
+    font-size: 2rem !important;
   }
 }

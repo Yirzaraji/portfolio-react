@@ -9,6 +9,18 @@
   font-size: 1rem;
 }
 
+.NavDesktopPost {
+  display: flex;
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 1rem;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+}
+
 .navButton a {
   text-decoration: none;
   margin-left: 6%;
@@ -86,4 +98,54 @@
 
 .fas-navbar {
   font-size: 1.2rem;
+}
+
+.navbar-mobile.closed {
+  display: none;
+}
+
+.navbar-mobile.open {
+  display: block;
+}
+
+.navbar-mobile li {
+  list-style: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.navbar-mobile li a {
+  text-decoration: none;
+  color: #4123bf;
+  transition: 0.5s;
+}
+
+.navbar-mobile li a:hover {
+  border-radius: 40px;
+  background-color: #4123bf;
+  color: white;
+  padding: 8px 22px 8px 22px;
+  transition: 0.5s;
+}
+
+.menu-burger-icon {
+  font-size: 2rem;
+  color: #4123bf;
+  border-radius: 50%;
+  padding: 13px;
+  transition: 0.7s;
+}
+
+.menu-burger-icon:hover {
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #4123bf;
+  border-radius: 22%;
+  padding: 13px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+#mobile-burger {
+  background-color: #ffffff;
 }

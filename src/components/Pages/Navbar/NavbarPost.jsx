@@ -30,7 +30,7 @@ function NavBar() {
 
   return (
     <nav>
-      <div className="NavDesktop d-none d-sm-flex">
+      <div className="NavDesktopPost d-none d-sm-flex">
         <div className="navButton">
           <Link to="/">HOME</Link>
         </div>

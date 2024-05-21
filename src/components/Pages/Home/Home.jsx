@@ -7,9 +7,11 @@ import Skills from "./Skills/Skills";
 import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 import Cards from "./Cards/Cards";
+import NavbarBurger from "../Navbar/NavbarBurger";
 
 const Home = () => (
   <div className="main">
+    <NavbarBurger />
     <Navbar />
     <Header />
     <WhatIDo />
