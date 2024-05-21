@@ -1,3 +1,11 @@
+body {
+  background-color: rgb(235, 235, 235);
+}
+
+.container-post-description {
+  min-height: 500px;
+}
+
 .bg-white img {
   margin: 0;
   padding: 0;
@@ -8,15 +16,6 @@
   line-height: 15px;
   padding-bottom: 10px;
   padding-top: 5px;
-}
-
-.project {
-  color: #f00e4e;
-  font-size: 1.7rem;
-}
-
-.projtitle {
-  color: white;
 }
 
 .project-black {
@@ -46,21 +45,19 @@
 }
 
 .PostDescription {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  -webkit-box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75);
+  position: relative;
+  /*  -webkit-box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75);
-  background: #f5f5f5;
+  box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75); */
+  background: #ffffff;
 }
 
 .paragraphePost {
-  /* min-height: 300px; */
-  border-radius: 10px;
+  min-height: 650px;
   -webkit-box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.75);
-  background: #f5f5f5;
+  background: #ffffff;
 }
 
 .postTitle {
@@ -85,12 +82,13 @@
 }
 
 .imgPost {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  -webkit-box-shadow: 0px 11px 10px -12px rgba(0, 0, 0, 0.75);
+  /* -webkit-box-shadow: 0px 11px 10px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 11px 10px -12px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 11px 10px -12px rgba(0, 0, 0, 0.75);
-  height: 100% !important;
+  box-shadow: 0px 11px 10px -12px rgba(0, 0, 0, 0.75); */
+  height: 400px !important;
+  width: 100% !important;
+  background-image: url("https://placehold.co/1400x400");
+  background-repeat: "no-repeat";
 }
 
 .tagsPost {
@@ -109,11 +107,40 @@
 }
 
 .tagsBloc {
-  bottom: 11px;
+  position: absolute;
+  bottom: 15px;
+}
+
+.tags-row {
+  position: relative;
 }
 
 .contentPost {
+  position: relative;
   min-height: 150px;
+}
+
+.testtt img {
+  width: 100%;
+  max-height: 400px;
+}
+
+.git-demo-p {
+  position: absolute;
+  margin-top: 20px;
+}
+
+.paragraphePost h3 {
+  background: -webkit-linear-gradient(#4f9ed6, #642088);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: 200;
+  margin-top: 50px;
+}
+
+.content-para p {
+  text-align: justify !important;
 }
 
 /*############ Caroussel ############*/
@@ -148,7 +175,13 @@ div.carousel-caption {
   color: wheat;
 }
  */
+.titleColorCarousel {
+  color: white;
+}
 
+.bg-carousel {
+  background-color: #181818;
+}
 .carousel-container {
   position: relative;
   max-width: 1450px; /* ou toute autre valeur de votre choix */
@@ -190,4 +223,5 @@ div.carousel-caption {
 
 .line_leftBlack a {
   margin-right: 0.5rem;
+  bottom: 0;
 }

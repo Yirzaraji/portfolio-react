@@ -1,0 +1,177 @@
+.blockBanner01Post {
+  background: #4123bf;
+  background: -moz-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, #4123bf),
+    color-stop(12%, #4320b6),
+    color-stop(96%, #500b76)
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #4123bf 0%,
+    #4320b6 12%,
+    #500b76 96%
+  );
+  background: -o-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: -ms-linear-gradient(left, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  background: linear-gradient(to right, #4123bf 0%, #4320b6 12%, #500b76 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#4123bf", endColorstr="#500b76", GradientType=1 );
+  font-weight: bold;
+  color: white;
+  height: 684px;
+}
+
+.blockBanner01Post p:nth-child(2),
+.blockBanner01Post p:nth-child(3) {
+  font-size: 2.3rem;
+  line-height: 8px;
+}
+
+.blockBanner01Post p:nth-child(4) span:nth-child(1) {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.logoround-reduced {
+  width: 95px;
+  margin: 25px;
+  margin-top: 50px;
+}
+.fa-circle-custom {
+  font-size: 1rem;
+}
+
+.bannerLowpolyImg {
+}
+
+.bandeauContact {
+  position: absolute;
+  bottom: 0;
+}
+
+.bandeauContact img {
+  width: 7%;
+  margin-bottom: 2%;
+}
+
+.cv_icon i {
+  color: white;
+  font-size: 2.4rem;
+  transition: 0.4s;
+  line-height: 30%;
+}
+
+.cv_icon i:hover {
+  color: #61d5e8;
+  transition: 0.4s;
+}
+
+.cv_icon p {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5rem !important;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.projtitle {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.project-header-post {
+  color: #f00e4e;
+  font-size: 1.7rem;
+  line-height: 1px;
+}
+
+.text-justify-header-post a {
+  text-decoration: none;
+  color: #451dac;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-left: 11px;
+  font-size: 1rem;
+}
+
+.text-justify-header-post a:hover {
+  background-color: #303030;
+  color: white;
+}
+
+.git-demo-links-header-post {
+  margin-top: 20px;
+}
+
+.tags-cards-header-post {
+  text-decoration: none;
+  color: white;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-right: 1%;
+  line-height: 38px;
+  font-weight: 600;
+}
+
+.bannerPost::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 1%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none; /* Pour que le pseudo-élément soit transparent aux événements de la souris */
+}
+
+/* .bannerPost::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #500b76 0%,
+    #500b76 11%,
+    rgba(128, 0, 128, 0.5) 50%,
+    rgba(128, 0, 128, 0) 95%
+  );
+  pointer-events: none;
+} */
+
+/* .bannerPost {
+  filter: grayscale(100%);
+} */
+/* 
+.bannerPost::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 255, 1) 0%,
+    rgba(0, 0, 255, 1) 5%,
+    rgba(128, 0, 128, 0.5) 50%,
+    rgba(128, 0, 128, 0) 95%
+  );
+  pointer-events: none;
+} */

@@ -24,7 +24,7 @@
 }
 
 .blockBanner01 p:nth-child(2),
-p:nth-child(3) {
+.blockBanner01 p:nth-child(3) {
   font-size: 2.3rem;
   line-height: 20px;
 }

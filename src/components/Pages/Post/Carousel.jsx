@@ -17,28 +17,39 @@ const Carousel = (post) => {
   };
 
   return (
-    <div className="mb-5 mt-3 carousel-container position-relative">
-      <button
-        className="btn btn-link carousel-btn carousel-btn-left"
-        onClick={prevImage}
-      >
-        <span className="carousel-arrow-left" aria-hidden="true">
-          &lsaquo;
-        </span>
-      </button>
-      <img
-        className="img-fluid img-carou"
-        src={`../${post.value.images && post.value.images[currentImageIndex]}`}
-        alt={currentImageIndex}
-      />
-      <button
-        className="btn btn-link carousel-btn carousel-btn-right"
-        onClick={nextImage}
-      >
-        <span className="carousel-arrow-right" aria-hidden="true">
-          &rsaquo;
-        </span>
-      </button>
+    <div className="container-fluid bg-dark pb-5">
+      <div className="row">
+        <div className="col-md-12 text-center titleColorCarousel mt-5 mb-2">
+          <h4>
+            <i className="fas fa-images"></i> <b>MEDIA</b> PHOTOS.
+          </h4>
+        </div>
+      </div>
+      <div className="mb-5 mt-3 carousel-container position-relative">
+        <button
+          className="btn btn-link carousel-btn carousel-btn-left"
+          onClick={prevImage}
+        >
+          <span className="carousel-arrow-left" aria-hidden="true">
+            &lsaquo;
+          </span>
+        </button>
+        <img
+          className="img-fluid img-carou"
+          src={`../${
+            post.value.images && post.value.images[currentImageIndex]
+          }`}
+          alt={currentImageIndex}
+        />
+        <button
+          className="btn btn-link carousel-btn carousel-btn-right"
+          onClick={nextImage}
+        >
+          <span className="carousel-arrow-right" aria-hidden="true">
+            &rsaquo;
+          </span>
+        </button>
+      </div>
     </div>
   );
 };

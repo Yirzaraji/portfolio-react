@@ -22,12 +22,12 @@ const About = ({ theme }) => (
             <br />
             <br />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec
-              nisl mauris. Curabitur placerat nec neque dapibus imperdiet.
-              Integer ullamcorper rhoncus ultrices. Donec sodales ligula ac
-              neque porta, ac pellentesque risus sagittis. Nunc malesuada quam
-              id diam pellentesque posuere. Pellentesque velit libero, tristique
-              id mollis eu, facilisis
+              Bonjour ! Je suis un développeur web passionné par la création
+              d'applications web dynamiques et attractives. Mon portfolio
+              présente divers projets qui démontrent ma capacité à relever des
+              défis complexes et à produire du code efficace. Je suis
+              enthousiaste à l'idée de contribuer à des projets passionnants et
+              de collaborer avec d'autres professionnels du domaine.
             </p>
           </div>
         </div>

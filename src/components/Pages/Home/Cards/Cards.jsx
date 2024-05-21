@@ -14,7 +14,7 @@ const Cards = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get(`/api/posts`);
+      const response = await axios.get(`api/posts`);
       setAlteredPosts(response.data);
       setPosts(response.data);
     } catch (error) {

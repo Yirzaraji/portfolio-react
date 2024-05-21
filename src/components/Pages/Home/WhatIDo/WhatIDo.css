@@ -7,10 +7,6 @@
   font-weight: 900;
 }
 
-h1 {
-  color: purple;
-}
-
 .titleColor {
   background: -webkit-linear-gradient(#4f9ed6, #642088);
   -webkit-background-clip: text;

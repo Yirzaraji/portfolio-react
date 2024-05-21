@@ -35,7 +35,7 @@ function NavBar() {
           <Link to="/">HOME</Link>
         </div>
         <div className="navButton">
-          <a href="/cv">CV</a>
+          <Link to="/cv">CV</Link>
         </div>
         <div className="navButton">
           <a href="#ankor_aboutMe">ABOUT</a>
@@ -47,19 +47,19 @@ function NavBar() {
           <>
             <div className="navButton">
               <Link to="/administration">
-                <i className="fas fa-users-cog"></i>
+                <i className="fas fa-users-cog fas-navbar"></i>
               </Link>
             </div>
             <div className="navButton">
               <Link to="" onClick={handleClick}>
-                <i className="fa-solid fa-right-from-bracket"></i>
+                <i className="fa-solid fa-right-from-bracket fas-navbar"></i>
               </Link>
             </div>
           </>
         ) : (
           <div className="navButton">
             <Link to="/login">
-              <i className="fas fa-user-lock"></i>
+              <i className="fas fa-user-lock fas-navbar"></i>
             </Link>
           </div>
         )}

@@ -7,7 +7,7 @@ const AuthContext = createContext();
 // create a component that provides the user context
 export const AuthProvider = (props) => {
   const [auth, setAuth] = useState();
-  //console.log(auth);
+  //console.log("test" + auth);
   useEffect(() => {
     //const jwt = document.cookie.split("=");
     //console.log("jwt: " + jwt[1]);

@@ -18,7 +18,7 @@ function Header() {
             <span className="text-warning">{"/>"}</span>
           </p>
           <p>
-            <span>Remi Larrauri</span>
+            <span>Remi Delarue</span>
             <br />
             <span>06.29.61.53.66</span>
           </p>

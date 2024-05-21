@@ -12,6 +12,7 @@ const useGetPost = () => {
     const data = async () => {
       try {
         const response = await axios.get(API_URL);
+        //console.log(response.data.paragraph);
         setPost(response.data);
       } catch (error) {
         console.error(error);

@@ -1,5 +1,9 @@
 # Getting Started
 
+npm install
+`npm start`
+cd server `nodemon watch`
+
 In the project directory, you can run:
 
 ### `npm start`

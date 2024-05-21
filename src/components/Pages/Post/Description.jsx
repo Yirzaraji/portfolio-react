@@ -20,21 +20,10 @@ const Description = (post) => {
   }
 
   return (
-    <div className="container-fluid mx-0 mb-5">
-      <div className="row mt-5 mb-5 justify-content-center">
-        <div className="col-sm-10 col-md-7 col-lg-4 col-xl-3 p-0 text-right">
-          <div
-            className="img-fluid imgPost"
-            style={{
-              backgroundImage: `url('../${post.value.image}')`,
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              width: "100%",
-            }}
-            alt="Responsive image"
-          ></div>
-        </div>
-        <div className="col-sm-10 col-md-7 col-lg-7 col-xl-6 PostDescription">
+    <div className="container-fluid">
+      <div className="row mb-5 justify-content-center">
+        <div className="col-sm-10 col-md-7 col-lg-4 col-xl-5 p-0 text-right container-post-description"></div>
+        <div className="col-sm-10 col-md-7 col-lg-7 col-xl-7 PostDescription">
           <div className="row justify-content-center">
             <div className="col-md-12 d-flex justify-content-between postTitle">
               <div className="project-title ml-5">
@@ -47,32 +36,29 @@ const Description = (post) => {
             </div>
             <div className="col-md-9 line_leftBlack mt-4 mb-5 text-justify contentPost">
               {post.value.description}
-              <br />
-              <br />
-              {/* {% if post.git is not null %} */}
-              <br />
-              <br />
-              {post.value.git ? (
-                <a
-                  className="font-weight-bold"
-                  href={post.value.git}
-                  target="_blank"
-                >
-                  <i className="fab fa-github-alt"></i> REPO GIT
-                </a>
-              ) : null}
-              {post.value.demo ? (
-                <a
-                  className="font-weight-bold"
-                  href={post.value.demo}
-                  target="_blank"
-                >
-                  <i className="fas fa-laptop-code"></i> DEMO LIVE
-                </a>
-              ) : null}
+              <p className="git-demo-p">
+                {post.value.git ? (
+                  <a
+                    className="font-weight-bold"
+                    href={post.value.git}
+                    target="_blank"
+                  >
+                    <i className="fab fa-github-alt"></i> REPO GIT
+                  </a>
+                ) : null}
+                {post.value.demo ? (
+                  <a
+                    className="font-weight-bold"
+                    href={post.value.demo}
+                    target="_blank"
+                  >
+                    <i className="fas fa-laptop-code"></i> DEMO LIVE
+                  </a>
+                ) : null}
+              </p>
             </div>
           </div>
-          <div className="row">
+          <div className="row tags-row">
             <div className="col-12 text-left tagsBloc">
               <span>Modifié: {formatDate(post.value.createdAt)}</span>
             </div>
