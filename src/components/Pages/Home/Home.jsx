@@ -8,11 +8,13 @@ import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 import Cards from "./Cards/Cards";
 import NavbarBurger from "../Navbar/NavbarBurger";
+/* import PwaBtn from "../../Common/Buttons/PwaBtn"; */
 
 const Home = () => (
   <div className="main">
     <NavbarBurger />
     <Navbar />
+    {/* <PwaBtn /> */}
     <Header />
     <WhatIDo />
     <About />

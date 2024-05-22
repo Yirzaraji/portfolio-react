@@ -13,6 +13,7 @@ import useAuth from "hooks/useAuth";
 
 function App() {
   const { auth } = useAuth();
+
   //render
   return (
     <div className="app">
